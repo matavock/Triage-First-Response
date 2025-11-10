@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: cec12c2d9a31445418013db7c1ede549
+timeCreated: 1484898506
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 81074
+  packageName: RoundedSquare
+  packageVersion: 1.0
+  assetPath: Assets/RoundedSquare/Scenes/Demo0.unity
+  uploadId: 287492

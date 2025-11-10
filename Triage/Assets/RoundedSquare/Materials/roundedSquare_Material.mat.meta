@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ec833fa6d4622468da6bdf3ed1de1646
+timeCreated: 1484897363
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 81074
+  packageName: RoundedSquare
+  packageVersion: 1.0
+  assetPath: Assets/RoundedSquare/Materials/roundedSquare_Material.mat
+  uploadId: 287492

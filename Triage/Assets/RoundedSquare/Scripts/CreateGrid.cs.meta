@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: c2e333e6f45be429fbeedc1ec1c39766
+timeCreated: 1484929233
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 81074
+  packageName: RoundedSquare
+  packageVersion: 1.0
+  assetPath: Assets/RoundedSquare/Scripts/CreateGrid.cs
+  uploadId: 287492

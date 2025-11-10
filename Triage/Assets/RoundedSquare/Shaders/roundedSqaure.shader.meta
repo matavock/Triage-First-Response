@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 43304dd54d0154650926114f512807bb
+timeCreated: 1484897569
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 81074
+  packageName: RoundedSquare
+  packageVersion: 1.0
+  assetPath: Assets/RoundedSquare/Shaders/roundedSqaure.shader
+  uploadId: 287492
