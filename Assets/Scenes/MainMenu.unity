@@ -500,7 +500,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SETTINGS
+  m_text: "\u041D\u0410\u0421\u0422\u0420\u041E\u0419\u041A\u0418"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1dddc11a415bbde41b52057c23aabae8, type: 2}
   m_sharedMaterial: {fileID: 1043991161}
@@ -636,7 +636,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: QUIT
+  m_text: "\u0412\u042B\u0419\u0422\u0418"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1dddc11a415bbde41b52057c23aabae8, type: 2}
   m_sharedMaterial: {fileID: 1043991161}
@@ -1044,7 +1044,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1233240405}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1560654767}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: LoadGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1233240405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1065,7 +1077,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7482667652216324306, guid: e0ec8821bc917a942a630177ba3ae2e8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: adf46012b907642a3abbf3a674b3db08, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1243,7 +1255,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7482667652216324306, guid: e0ec8821bc917a942a630177ba3ae2e8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: adf46012b907642a3abbf3a674b3db08, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1318,7 +1330,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SELECT DAY
+  m_text: "\u0412\u042B\u0411\u0420\u0410\u0422\u042C \u0414\u0415\u041D\u042C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1dddc11a415bbde41b52057c23aabae8, type: 2}
   m_sharedMaterial: {fileID: 1043991161}
@@ -1523,7 +1535,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7482667652216324306, guid: e0ec8821bc917a942a630177ba3ae2e8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: adf46012b907642a3abbf3a674b3db08, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1719,7 +1731,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: NEW SHIFT
+  m_text: "\u041D\u041E\u0412\u0410\u042F \u0421\u041C\u0415\u041D\u0410"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1dddc11a415bbde41b52057c23aabae8, type: 2}
   m_sharedMaterial: {fileID: 1043991161}
@@ -1924,7 +1936,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7482667652216324306, guid: e0ec8821bc917a942a630177ba3ae2e8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: adf46012b907642a3abbf3a674b3db08, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2074,7 +2086,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: CONTINUE
+  m_text: "\u041F\u0420\u041E\u0414\u041E\u041B\u0416\u0418\u0422\u042C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1dddc11a415bbde41b52057c23aabae8, type: 2}
   m_sharedMaterial: {fileID: 1043991161}
@@ -2291,7 +2303,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7482667652216324306, guid: e0ec8821bc917a942a630177ba3ae2e8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: adf46012b907642a3abbf3a674b3db08, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
