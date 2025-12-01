@@ -30,7 +30,7 @@ public class PatientImageController : MonoBehaviour
     public ProtocolPaper protocolPaper;
     public GameObject paperObject;
     private Coroutine paperCoroutine;
-    public GameObject actionButtons;
+    public GameObject extraButtonsPanel;
 
     void Start()
     {
@@ -99,10 +99,8 @@ public class PatientImageController : MonoBehaviour
         if (paperObject != null)
             paperObject.SetActive(false);
 
-        if (actionButtons != null)
-        {
-            actionButtons.SetActive(false);
-        }
+        if (extraButtonsPanel != null)
+            extraButtonsPanel.SetActive(false);
     }
 
     private IEnumerator ShowPaperWithDelay(float delay)
@@ -127,18 +125,18 @@ public class PatientImageController : MonoBehaviour
     private void ShowNextPatient()
     {
         currentIndex++;
-        
+
         // все пациенты закончились
         if (currentIndex >= patientSprites.Length)
         {
             EndDayAndGoToSummary();
             return;
         }
-        // убираем кнопки admit reject
-        if (actionButtons != null)
-        {
-            actionButtons.SetActive(false);
-        }
+
+        // СКРЫВАЕМ ПАНЕЛЬ КНОПОК ДЛЯ НОВОГО КЛИЕНТА
+        if (extraButtonsPanel != null)
+            extraButtonsPanel.SetActive(false);
+
         // ОТМЕНЯЕМ старую корутину появления бумаги, если ещё работала
         if (paperCoroutine != null)
         {
