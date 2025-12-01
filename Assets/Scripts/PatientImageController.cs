@@ -30,6 +30,7 @@ public class PatientImageController : MonoBehaviour
     public ProtocolPaper protocolPaper;
     public GameObject paperObject;
     private Coroutine paperCoroutine;
+    public GameObject actionButtons;
 
     void Start()
     {
@@ -97,6 +98,11 @@ public class PatientImageController : MonoBehaviour
 
         if (paperObject != null)
             paperObject.SetActive(false);
+
+        if (actionButtons != null)
+        {
+            actionButtons.SetActive(false);
+        }
     }
 
     private IEnumerator ShowPaperWithDelay(float delay)
@@ -121,14 +127,18 @@ public class PatientImageController : MonoBehaviour
     private void ShowNextPatient()
     {
         currentIndex++;
-
+        
         // все пациенты закончились
         if (currentIndex >= patientSprites.Length)
         {
             EndDayAndGoToSummary();
             return;
         }
-
+        // убираем кнопки admit reject
+        if (actionButtons != null)
+        {
+            actionButtons.SetActive(false);
+        }
         // ќ“ћ≈Ќя≈ћ старую корутину по€влени€ бумаги, если ещЄ работала
         if (paperCoroutine != null)
         {
