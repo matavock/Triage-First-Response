@@ -711,8 +711,8 @@ MonoBehaviour:
   - {fileID: -5265623524081327074, guid: c3f9cf0c4487fc84e9346877863b665d, type: 3}
   - {fileID: 6889580050232550160, guid: b30bec1bcaa45f54d9bf1193730f2678, type: 3}
   - {fileID: -1866607781859456955, guid: d1329b4ec39196e45a627f9adfeecfc8, type: 3}
-  - {fileID: -5265623524081327074, guid: c3f9cf0c4487fc84e9346877863b665d, type: 3}
-  - {fileID: -1218204862191146628, guid: c21dd88e6527d0b49a916ea9c9bf7d3c, type: 3}
+  - {fileID: -4381628470313472642, guid: 0f492ca307b99c8428aa1c5b155e3f16, type: 3}
+  - {fileID: 6414332423137836208, guid: fad6a5ff719e44a4eb6a454a2575f489, type: 3}
   correctAnswers: 01010000010001
   delayBetweenPatients: 1
   summarySceneName: DaySummary
