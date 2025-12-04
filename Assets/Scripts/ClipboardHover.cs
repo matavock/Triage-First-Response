@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
@@ -17,6 +18,7 @@ public class ClipboardHover : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     [Header("«вук")]
     public AudioSource audioSource;
     public AudioClip hoverSound;
+    public AudioMixerGroup sfxMixerGroup;
 
     [Header("Ёффект наведени€")]
     public float hoverAlpha = 0.8f;
@@ -30,6 +32,9 @@ public class ClipboardHover : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
         if (audioSource == null)
             audioSource = GetComponent<AudioSource>();
+
+        if (audioSource != null && sfxMixerGroup != null)
+            audioSource.outputAudioMixerGroup = sfxMixerGroup;
 
         if (rulesPanel != null)
             rulesPanel.SetActive(false);

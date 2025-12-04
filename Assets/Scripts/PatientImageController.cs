@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -21,6 +22,7 @@ public class PatientImageController : MonoBehaviour
     [Header("Sound")]
     public AudioSource paperAudioSource;   // объект с AudioSource
     public AudioClip paperAppearSound;     // звук бумаги
+    public AudioMixerGroup sfxMixerGroup;
 
     private int currentIndex = -1;
     private bool isSwitching = false;
@@ -41,6 +43,9 @@ public class PatientImageController : MonoBehaviour
 
         // стартуем день с задержкой появления первого пациента
         StartCoroutine(DelayedStartFirstPatient());
+
+        if (paperAudioSource != null && sfxMixerGroup != null)
+            paperAudioSource.outputAudioMixerGroup = sfxMixerGroup;
     }
 
     private IEnumerator DelayedStartFirstPatient()
