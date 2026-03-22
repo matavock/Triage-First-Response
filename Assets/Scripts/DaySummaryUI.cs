@@ -25,6 +25,15 @@ public class DaySummaryUI : MonoBehaviour
 
         if (incorrectText != null)
             incorrectText.text = $"Неверных решений: {DayStats.incorrect}";
+
+        int currentDay = 1; // для Day1, для Day2 будет 2 и т.д.
+
+        int unlocked = PlayerPrefs.GetInt("UnlockedDay", 1);
+
+        if (currentDay >= unlocked)
+        {
+            PlayerPrefs.SetInt("UnlockedDay", currentDay + 1);
+        }
     }
 
     public void OnNextButtonPressed()
