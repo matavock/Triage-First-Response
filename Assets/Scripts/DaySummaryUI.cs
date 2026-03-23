@@ -26,18 +26,36 @@ public class DaySummaryUI : MonoBehaviour
         if (incorrectText != null)
             incorrectText.text = $"Неверных решений: {DayStats.incorrect}";
 
-        int currentDay = 1; // для Day1, для Day2 будет 2 и т.д.
+        //int currentDay = 1; // для Day1, для Day2 будет 2 и т.д.
+        int currentDay = PlayerPrefs.GetInt("CurrentDay", 1);
 
         int unlocked = PlayerPrefs.GetInt("UnlockedDay", 1);
 
         if (currentDay >= unlocked)
         {
+            int newUnlocked = currentDay + 1;
             PlayerPrefs.SetInt("UnlockedDay", currentDay + 1);
         }
+
+        int nextDay = currentDay + 1;
+        PlayerPrefs.SetInt("CurrentDay", nextDay);
+
+        PlayerPrefs.Save();
     }
 
     public void OnNextButtonPressed()
     {
         SceneManager.LoadScene(nextSceneName);
+    }
+
+    public void ResetProgress()
+    {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetInt("CurrentDay", 1);
+        PlayerPrefs.SetInt("UnlockedDay", 1);
+        PlayerPrefs.Save();
+
+        // Перезагрузить сцену
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
