@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3dd4e1cdf391c854eaf108294b7b79c8
+guid: 84f91dfb536ec41429808d61f8079008
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7177831760212934264
-    second: Pen_0
+      213: -1102073343668727113
+    second: Woman_5_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,19 +72,6 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 256
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 3
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -97,7 +84,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -126,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pen_0
+      name: Woman_5_0
       rect:
         serializedVersion: 2
-        x: 135
-        y: 86
-        width: 394
-        height: 441
+        x: 189
+        y: 0
+        width: 502
+        height: 881
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 87e3205c4f7cc9360800000000000000
-      internalID: 7177831760212934264
+      spriteID: 7b2d23a0226a4b0f0800000000000000
+      internalID: -1102073343668727113
       vertices: []
       indices: 
       edges: []
@@ -161,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Pen_0: 7177831760212934264
+      Woman_5_0: -1102073343668727113
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

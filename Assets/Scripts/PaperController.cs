@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-public class ProtocolModalController : MonoBehaviour
+public class PaperController : MonoBehaviour
 {
     [Header("UI ссылки")]
     public GameObject blurPanel;          // BlurPanel (затемнение/блюр фона)

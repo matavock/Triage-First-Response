@@ -2,10 +2,10 @@
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class ProtocolPaper : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+public class Paper : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     public Image paperImage;
-    public ProtocolModalController modal;
+    public PaperController modal;
 
     public string patientName;
     public int patientAge;

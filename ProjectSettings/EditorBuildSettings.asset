@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SettingsScene.unity
     guid: 5adaa7d4ffc248f4cbc71ed644b78b44
   - enabled: 1
-    path: Assets/Scenes/DaySummary.unity
+    path: Assets/Scenes/Day1Summary.unity
     guid: 2724a662e3a11d74e952832a4f78cc2f
   - enabled: 1
     path: Assets/Scenes/Day2.unity

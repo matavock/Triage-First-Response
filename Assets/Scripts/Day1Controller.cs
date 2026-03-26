@@ -3,44 +3,81 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
+using System;
+using Unity.VectorGraphics;
 
-public class PatientImageController : MonoBehaviour
+public class Day1Controller : MonoBehaviour
 {
     [Header("UI")]
     public Image patientImage;
+    public Image dialogueImage;
 
-    [Header("Пациенты (спрайты)")]
+    [Header("Пациенты (спрайты) и окно диалога")]
     public Sprite[] patientSprites;        // изображения по порядку
+    public Sprite dialogueSprites;
+
+    [Header("Пациенты (диалоги)")]
+    public string[] patientDialogues;
+    public TMP_Text dialogue;
 
     [Header("Правильные ответы")]
     public bool[] correctAnswers;          // true = должен быть принят, false = отказать
 
+    [Header("Пациенты (Счастье принятия)")]
+    public int[] acceptDepressionValue;
+
+    [Header("Пациенты (Счастье отказа)")]
+    public int[] rejectDepressionValue;
+
+    [Header("Пациенты (Денежная цена принятия)")]
+    public int[] acceptWealthValue;
+
+    [Header("Пациенты (Денежная цена отказа)")]
+    public int[] rejectWealthValue;
+
     [Header("Настройки")]
     public float delayBetweenPatients = 1.0f;
-    public string summarySceneName = "DaySummary";
+    public string summarySceneName = "Day1Summary";
 
     [Header("Sound")]
     public AudioSource paperAudioSource;   // объект с AudioSource
     public AudioClip paperAppearSound;     // звук бумаги
     public AudioMixerGroup sfxMixerGroup;
+    /*
+    public AudioSource passportAudioSource;   // объект с AudioSource
+    public AudioClip passportAppearSound;     // звук паспорта
+    */
+
+    [Header("Sliders")]
+    public Slider depressionSlider;   // объект с AudioSource
+    public Slider wealthSlider;
 
     private int currentIndex = -1;
     private bool isSwitching = false;
     public string[] patientNames;
     public int[] patientAges;
     public string[] patientComplaints;
-    public ProtocolPaper protocolPaper;
+
+    public Paper Paper;
     public GameObject paperObject;
     private Coroutine paperCoroutine;
+    
     public GameObject extraButtonsPanel;
 
     void Start()
     {
-        DayStats.Reset();
+        Debug.Log(SceneManager.GetActiveScene().name);
+        PlayerPrefs.SetInt(SceneManager.GetActiveScene().name, 0);
+        PlayerPrefs.SetString("CurrentScene", SceneManager.GetActiveScene().name);
+        PlayerPrefs.Save();
+        DayStats.depression = PlayerPrefs.GetInt("Happiness", 50);
+        DayStats.depression = PlayerPrefs.GetInt("Wealth", 50);
 
         // общее число пациентов в дне
         DayStats.total = patientSprites.Length;
 
+        
         // стартуем день с задержкой появления первого пациента
         StartCoroutine(DelayedStartFirstPatient());
 
@@ -62,7 +99,17 @@ public class PatientImageController : MonoBehaviour
         if (isSwitching) return;
 
         bool correct = correctAnswers[currentIndex] == true;
+        DayStats.depression += acceptDepressionValue[currentIndex];
+        DayStats.wealth += acceptWealthValue[currentIndex];
 
+        if (DayStats.depression <= 0)
+            DayStats.depression = 0;
+        if (DayStats.wealth <= 0)
+            DayStats.wealth = 0;
+
+        depressionSlider.value = DayStats.depression;
+        wealthSlider.value = DayStats.wealth;
+        //DayStats.wealth += acceptWealthValue[currentIndex];
         if (correct) DayStats.correct++;
         else DayStats.incorrect++;
 
@@ -77,7 +124,16 @@ public class PatientImageController : MonoBehaviour
         if (isSwitching) return;
 
         bool correct = correctAnswers[currentIndex] == false;
+        DayStats.depression += rejectDepressionValue[currentIndex];
+        DayStats.wealth += rejectWealthValue[currentIndex];
 
+        if (DayStats.depression <= 0)
+            DayStats.depression = 0;
+        if (DayStats.wealth <= 0)
+            DayStats.wealth = 0;
+
+        depressionSlider.value = DayStats.depression;
+        wealthSlider.value = DayStats.wealth;
         if (correct) DayStats.correct++;
         else DayStats.incorrect++;
 
@@ -106,6 +162,12 @@ public class PatientImageController : MonoBehaviour
 
         if (extraButtonsPanel != null)
             extraButtonsPanel.SetActive(false);
+
+        if (dialogueImage != null)
+            dialogueImage.gameObject.SetActive(false);
+
+        if (dialogue != null)
+            dialogue.gameObject.SetActive(false);
     }
 
     private IEnumerator ShowPaperWithDelay(float delay)
@@ -158,11 +220,18 @@ public class PatientImageController : MonoBehaviour
         patientImage.color = new Color(1f, 1f, 1f, 1f);
         patientImage.gameObject.SetActive(true);
 
+        // ПОКАЗЫВАЕМ ДИАЛОГ НОВОГО ПАЦИЕНТА
+        dialogueImage.sprite = dialogueSprites;
+        dialogue.text = patientDialogues[currentIndex];
+        dialogueImage.color = new Color(1f, 1f, 1f, 1f);
+        dialogueImage.gameObject.SetActive(true);
+        dialogue.gameObject.SetActive(true);
+
         // ЗАПУСКАЕМ ЗАДЕРЖКУ НА ПОЯВЛЕНИЕ БУМАГИ
         paperCoroutine = StartCoroutine(ShowPaperWithDelay(0.35f));
 
         // ОБНОВЛЯЕМ БУМАГУ
-        protocolPaper.SetPatientInfo(
+        Paper.SetPatientInfo(
             patientNames[currentIndex],
             patientAges[currentIndex],
             patientComplaints[currentIndex]
