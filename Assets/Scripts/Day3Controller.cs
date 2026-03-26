@@ -7,7 +7,7 @@ using TMPro;
 using System;
 using Unity.VectorGraphics;
 
-public class Day2Controller : MonoBehaviour
+public class Day3Controller : MonoBehaviour
 {
     [Header("UI")]
     public Image patientImage;

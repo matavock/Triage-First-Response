@@ -798,6 +798,7 @@ GameObject:
   - component: {fileID: 531854578}
   - component: {fileID: 531854579}
   - component: {fileID: 531854580}
+  - component: {fileID: 531854581}
   m_Layer: 5
   m_Name: WealthProgressBar
   m_TagString: Untagged
@@ -890,6 +891,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ef5f910ad455fe4eb8c78e3f4087ebb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerWealth
+--- !u!114 &531854581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531854577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfe8378717b495d4da4e9d95472c87e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WealthProgBar
+  progressSlider: {fileID: 531854579}
 --- !u!1 &552371799
 GameObject:
   m_ObjectHideFlags: 0
@@ -968,7 +982,7 @@ MonoBehaviour:
   - "\u0414\u0435\u043D\u0438\u0441 \u041A\u043E\u0442\u043E\u0432"
   - "\u041E\u043B\u044C\u0433\u0430 \u0421\u0435\u043C\u0451\u043D\u043E\u0432\u0430"
   - "\u0420\u043E\u043C\u0430\u043D \u0427\u0438\u0436"
-  patientAges: 1f000000360000001b00000016000000240000002d0000001d000000
+  patientAges: 1f0000004d00000023000000100000002a000000330000001a000000
   patientComplaints:
   - "\u0421\u0443\u0445\u043E\u0439 \u043A\u0430\u0448\u0435\u043B\u044C\\n\u0421\u043B\u0430\u0431\u043E\u0441\u0442\u044C"
   - "\u041B\u0438\u0445\u043E\u0440\u0430\u0434\u043A\u0430\\n\u041C\u043E\u043A\u0440\u044B\u0439
@@ -3046,6 +3060,7 @@ GameObject:
   - component: {fileID: 1574328963}
   - component: {fileID: 1574328964}
   - component: {fileID: 1574328965}
+  - component: {fileID: 1574328966}
   m_Layer: 5
   m_Name: DepressionProgressBar
   m_TagString: Untagged
@@ -3150,6 +3165,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bc860dcb77d4574b91560a523fccdb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerDepression
+--- !u!114 &1574328966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574328962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b91aea4e8d28b684ab2f9f572ce52d0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DeprProgBar
+  progressSlider: {fileID: 1574328964}
 --- !u!1 &1592958051
 GameObject:
   m_ObjectHideFlags: 0
@@ -4103,7 +4131,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2045492094208909694, guid: 4c9f4292bc0d771479ddd3e97f1af32e, type: 3}
+  m_Sprite: {fileID: 7295459328139325946, guid: c8270187216d62347a3f180bd2f93db5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

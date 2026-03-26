@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class Day1SummaryUI : MonoBehaviour
+public class Day2SummaryUI : MonoBehaviour
 {
     public TMP_Text titleText;
     public TMP_Text totalText;
@@ -25,14 +25,14 @@ public class Day1SummaryUI : MonoBehaviour
         if (DayStats.depression > 0 && DayStats.wealth > 0)
         {
             if (titleText != null)
-                titleText.text = "Поздравляем с завершением первого дня!";
+                titleText.text = "Поздравляем с завершением второго дня!";
         }
         else
-        { 
+        {
             titleText.text = "День завершен";
         }
         if (totalText != null)
-                totalText.text = $"Всего пациентов: {DayStats.total}";
+            totalText.text = $"Всего пациентов: {DayStats.total}";
 
         if (correctText != null)
             correctText.text = $"Верных решений: {DayStats.correct}";
@@ -81,8 +81,8 @@ public class Day1SummaryUI : MonoBehaviour
         {
             nextScene.text = "В МЕНЮ";
             nextSceneName = "MainMenu";
-            PlayerPrefs.SetInt("Day1", 0);
-            PlayerPrefs.SetInt("Day2", -1);
+            PlayerPrefs.SetInt("Day2", 0);
+            PlayerPrefs.SetInt("Day3", -1);
             PlayerPrefs.SetInt("Happiness", 50);
             PlayerPrefs.SetInt("Wealth", 50);
             PlayerPrefs.SetString("CurrentScene", "Day1");
@@ -91,17 +91,17 @@ public class Day1SummaryUI : MonoBehaviour
         }
         else
         {
-            nextScene.text = "ДЕНЬ 2";
+            nextScene.text = "ДЕНЬ 3";
             mainMenuText.text = "В МЕНЮ";
-            nextSceneName = "Day2";
-            PlayerPrefs.SetInt("Day1", 1);
-            PlayerPrefs.SetInt("Day2", 0);
+            nextSceneName = "Day3";
+            PlayerPrefs.SetInt("Day2", 1);
+            PlayerPrefs.SetInt("Day3", 0);
             PlayerPrefs.SetInt("Happiness", DayStats.depression);
             PlayerPrefs.SetInt("Wealth", DayStats.wealth);
-            PlayerPrefs.SetString("CurrentScene", "Day2");
+            PlayerPrefs.SetString("CurrentScene", "Day3");
             PlayerPrefs.Save();
         }
-        
+
 
         PlayerPrefs.Save();
     }

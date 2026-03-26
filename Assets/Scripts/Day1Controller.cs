@@ -68,12 +68,15 @@ public class Day1Controller : MonoBehaviour
     void Start()
     {
         Debug.Log(SceneManager.GetActiveScene().name);
-        PlayerPrefs.SetInt(SceneManager.GetActiveScene().name, 0);
         PlayerPrefs.SetString("CurrentScene", SceneManager.GetActiveScene().name);
+        
+        PlayerPrefs.SetInt("Happiness", 50);
+        PlayerPrefs.SetInt("Wealth", 50);
         PlayerPrefs.Save();
         DayStats.depression = PlayerPrefs.GetInt("Happiness", 50);
-        DayStats.depression = PlayerPrefs.GetInt("Wealth", 50);
+        DayStats.wealth = PlayerPrefs.GetInt("Wealth", 50);
 
+        DayStats.Reset();
         // общее число пациентов в дне
         DayStats.total = patientSprites.Length;
 
