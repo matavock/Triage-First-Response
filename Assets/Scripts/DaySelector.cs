@@ -17,7 +17,7 @@ public class DaySelectController : MonoBehaviour
 
         for (int i = 0; i < dayButtons.Length; i++)
         {
-            int dayIndex = i + 1;
+            int dayIndex = i +1 ;
 
             if (dayIndex <= unlockedDay)
                 dayButtons[i].interactable = true;

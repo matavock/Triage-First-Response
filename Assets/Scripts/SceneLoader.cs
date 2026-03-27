@@ -1,10 +1,22 @@
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    public void LoadMainMenu() => SceneManager.LoadScene("MainMenu");
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+        
+    }
     public void LoadGame() => SceneManager.LoadScene("Day1");
+
+    public void LoadContinue()
+    {
+        if (PlayerPrefs.GetString("CurrentScene") != "")
+            SceneManager.LoadScene(PlayerPrefs.GetString("CurrentScene"));
+    }
     public void LoadSettings() => SceneManager.LoadScene("SettingsScene");
     public void QuitGame()
     {

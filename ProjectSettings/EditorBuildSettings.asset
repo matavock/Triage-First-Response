@@ -15,14 +15,14 @@ EditorBuildSettings:
     path: Assets/Scenes/SettingsScene.unity
     guid: 5adaa7d4ffc248f4cbc71ed644b78b44
   - enabled: 1
-    path: Assets/Scenes/DaySummary.unity
+    path: Assets/Scenes/Day1Summary.unity
     guid: 2724a662e3a11d74e952832a4f78cc2f
   - enabled: 1
     path: Assets/Scenes/Day2.unity
     guid: 155269c55e6931b448426bf6c043ba30
   - enabled: 1
-    path: Assets/Scenes/DaySelect.unity
-    guid: c02470e6bbfec4a4db5bdb4007b55955
+    path: Assets/Scenes/Day2Summary.unity
+    guid: e0b6dd469db1a2840abd66326e71393f
   - enabled: 1
     path: Assets/Scenes/Day3.unity
     guid: b9bf6680133d78a48a581a5f175c023b
@@ -32,5 +32,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Day5.unity
     guid: 476bf9e0c4fbb7b4eaf915520e9de398
+  - enabled: 0
+    path: Assets/Scenes/DaySelect.unity
+    guid: c02470e6bbfec4a4db5bdb4007b55955
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
