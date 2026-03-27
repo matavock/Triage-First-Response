@@ -25,11 +25,11 @@ public class Day2SummaryUI : MonoBehaviour
         if (DayStats.depression > 0 && DayStats.wealth > 0)
         {
             if (titleText != null)
-                titleText.text = "Поздравляем с завершением второго дня!";
+                titleText.text = "Поздравляем с завершением второго дня!\n\nНа данный момент, в игре полноценно реализовано 2 дня.\nСпасибо за игру!";
         }
         else
         {
-            titleText.text = "День завершен";
+            titleText.text = "День завершен.\nНа данный момент, в игре полноценно реализовано 2 дня.\nСпасибо за игру!";
         }
         if (totalText != null)
             totalText.text = $"Всего пациентов: {DayStats.total}";
@@ -77,18 +77,17 @@ public class Day2SummaryUI : MonoBehaviour
             winFlag = false;
         }
 
-        if (!winFlag)
-        {
-            nextScene.text = "В МЕНЮ";
-            nextSceneName = "MainMenu";
-            PlayerPrefs.SetInt("Day2", 0);
-            PlayerPrefs.SetInt("Day3", -1);
-            PlayerPrefs.SetInt("Happiness", 50);
-            PlayerPrefs.SetInt("Wealth", 50);
-            PlayerPrefs.SetString("CurrentScene", "Day1");
-            PlayerPrefs.Save();
+        nextScene.text = "В МЕНЮ";
+        nextSceneName = "MainMenu";
+        PlayerPrefs.SetInt("Day2", 0);
+        PlayerPrefs.SetInt("Day3", -1);
+        PlayerPrefs.SetInt("Happiness", 50);
+        PlayerPrefs.SetInt("Wealth", 50);
+        PlayerPrefs.SetString("CurrentScene", "Day1");
+        PlayerPrefs.Save();
 
-        }
+
+        /*
         else
         {
             nextScene.text = "ДЕНЬ 3";
@@ -101,7 +100,7 @@ public class Day2SummaryUI : MonoBehaviour
             PlayerPrefs.SetString("CurrentScene", "Day3");
             PlayerPrefs.Save();
         }
-
+        */
 
         PlayerPrefs.Save();
     }

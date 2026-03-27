@@ -4,8 +4,6 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
-using System;
-using Unity.VectorGraphics;
 
 public class Day1Controller : MonoBehaviour
 {
@@ -19,6 +17,8 @@ public class Day1Controller : MonoBehaviour
 
     [Header("Пациенты (диалоги)")]
     public string[] patientDialogues;
+    public string[] patientAcceptDialogues;
+    public string[] patientRejectDialogues;
     public TMP_Text dialogue;
 
     [Header("Правильные ответы")]
@@ -38,7 +38,7 @@ public class Day1Controller : MonoBehaviour
 
     [Header("Настройки")]
     public float delayBetweenPatients = 1.0f;
-    public string summarySceneName = "Day1Summary";
+    public string summarySceneName;
 
     [Header("Sound")]
     public AudioSource paperAudioSource;   // объект с AudioSource
@@ -50,7 +50,7 @@ public class Day1Controller : MonoBehaviour
     */
 
     [Header("Sliders")]
-    public Slider depressionSlider;   // объект с AudioSource
+    public Slider depressionSlider;
     public Slider wealthSlider;
 
     private int currentIndex = -1;
@@ -62,14 +62,14 @@ public class Day1Controller : MonoBehaviour
     public Paper Paper;
     public GameObject paperObject;
     private Coroutine paperCoroutine;
-    
+
     public GameObject extraButtonsPanel;
 
     void Start()
     {
         Debug.Log(SceneManager.GetActiveScene().name);
         PlayerPrefs.SetString("CurrentScene", SceneManager.GetActiveScene().name);
-        
+
         PlayerPrefs.SetInt("Happiness", 50);
         PlayerPrefs.SetInt("Wealth", 50);
         PlayerPrefs.Save();
@@ -80,7 +80,7 @@ public class Day1Controller : MonoBehaviour
         // общее число пациентов в дне
         DayStats.total = patientSprites.Length;
 
-        
+
         // стартуем день с задержкой появления первого пациента
         StartCoroutine(DelayedStartFirstPatient());
 
@@ -116,8 +116,22 @@ public class Day1Controller : MonoBehaviour
         if (correct) DayStats.correct++;
         else DayStats.incorrect++;
 
+        //StartCoroutine(ShowAcceptDialogue());
+
         StartCoroutine(SwitchToNextPatient());
     }
+
+    /*
+    private IEnumerator ShowAcceptDialogue()
+    {
+        dialogueImage.sprite = dialogueSprites;
+        dialogue.text = patientAcceptDialogues[currentIndex];
+        dialogueImage.color = new Color(1f, 1f, 1f, 1f);
+        dialogueImage.gameObject.SetActive(true);
+        dialogue.gameObject.SetActive(true);
+        yield return new WaitForSeconds(delayBetweenPatients*50);
+    }
+    */
 
     // ----------------------------
     //      КНОПКА "ОТКАЗАТЬ"
