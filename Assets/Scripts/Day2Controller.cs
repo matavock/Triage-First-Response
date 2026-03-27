@@ -276,7 +276,7 @@ public class Day2Controller : MonoBehaviour
 
         // ÎÁÍÎÂËßÅÌ ÏÀÑÏÎĞÒ
         Passport.SetPatientInfo(
-            patientNames[currentIndex],
+            patientPassportNames[currentIndex],
             patientSex[currentIndex],
             patientBirth[currentIndex]
         );

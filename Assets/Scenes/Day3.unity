@@ -3370,7 +3370,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0414\u0415\u041D\u042C 2"
+  m_text: "\u0414\u0415\u041D\u042C 3"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1dddc11a415bbde41b52057c23aabae8, type: 2}
   m_sharedMaterial: {fileID: 850849469055703587, guid: 1dddc11a415bbde41b52057c23aabae8, type: 2}
