@@ -4114,14 +4114,15 @@ RectTransform:
   - {fileID: 1988754482}
   - {fileID: 1997677024}
   - {fileID: 1384969761}
+  - {fileID: 295718300}
   - {fileID: 929597425}
   - {fileID: 1339804364}
   - {fileID: 2046945006}
   - {fileID: 687831779}
   - {fileID: 151623814}
   - {fileID: 1605437610}
-  - {fileID: 295718300}
   - {fileID: 411118604}
+  - {fileID: 43016518}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4775,7 +4776,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1608041905}
   - component: {fileID: 1608041904}
-  - component: {fileID: 1608041906}
   - component: {fileID: 1608041907}
   m_Layer: 5
   m_Name: DepressionProgressBar
@@ -4869,18 +4869,6 @@ RectTransform:
   m_AnchoredPosition: {x: -14.543, y: -3.029}
   m_SizeDelta: {x: 267.659, y: 33.457}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1608041906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1608041903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bc860dcb77d4574b91560a523fccdb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerDepression
 --- !u!114 &1608041907
 MonoBehaviour:
   m_ObjectHideFlags: 0
