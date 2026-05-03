@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 558057600}
   toggleTransition: 1
-  graphic: {fileID: 0}
+  graphic: {fileID: 267820661}
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
