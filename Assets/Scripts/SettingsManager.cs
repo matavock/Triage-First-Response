@@ -14,6 +14,9 @@ public class SettingsManager : MonoBehaviour
     [Header("Video")]
     public Toggle fullscreen;
 
+    [Header("Gameplay")]
+    public Toggle instantAnswerFeedback;
+
     void Start()
     {
         // читаем сохранённые значения (0..1), по умолчанию 0.75
@@ -31,8 +34,14 @@ public class SettingsManager : MonoBehaviour
         ApplyVolume("MusicVol", musicVal);
         ApplyVolume("SFXVol", sfxVal);
 
-        fullscreen.isOn = PlayerPrefs.GetInt("Fullscreen", 1) == 1;
-        Screen.fullScreen = fullscreen.isOn;
+        if (fullscreen != null)
+        {
+            fullscreen.isOn = PlayerPrefs.GetInt("Fullscreen", 1) == 1;
+            Screen.fullScreen = fullscreen.isOn;
+        }
+
+        if (instantAnswerFeedback != null)
+            instantAnswerFeedback.isOn = PlayerPrefs.GetInt("InstantAnswerFeedback", 0) == 1;
     }
 
     public void SetMaster(float v)
@@ -57,6 +66,12 @@ public class SettingsManager : MonoBehaviour
     {
         Screen.fullScreen = isOn;
         PlayerPrefs.SetInt("Fullscreen", isOn ? 1 : 0);
+    }
+
+    public void SetInstantAnswerFeedback(bool isOn)
+    {
+        PlayerPrefs.SetInt("InstantAnswerFeedback", isOn ? 1 : 0);
+        PlayerPrefs.Save();
     }
 
     void ApplyVolume(string paramName, float sliderValue)

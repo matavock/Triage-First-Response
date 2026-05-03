@@ -672,6 +672,242 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &295718299
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 295718300}
+  - component: {fileID: 295718304}
+  - component: {fileID: 295718303}
+  - component: {fileID: 295718301}
+  - component: {fileID: 295718305}
+  m_Layer: 5
+  m_Name: DoctorHandbook
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &295718300
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295718299}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1331218916}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 172, y: -170}
+  m_SizeDelta: {x: 260, y: 340}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!82 &295718301
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295718299}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &295718303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295718299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 6749638072462117549, guid: 55dd8ab509c257849b882fafcb017c48, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &295718304
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295718299}
+  m_CullTransparentMesh: 1
+--- !u!114 &295718305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295718299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb874a701c21551458c9ca0cdfe9295e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoctorHandbookHover
+  handbookImage: {fileID: 295718303}
+  rulesPanel: {fileID: 411118603}
+  rulesText: {fileID: 598593393}
+  handbookContent: "\u0421\u043F\u0440\u0430\u0432\u043E\u0447\u043D\u0438\u043A
+    \u0432\u0440\u0430\u0447\u0430\n\n\u0421\u043E\u0434\u0435\u0440\u0436\u0430\u043D\u0438\u0435\n1.
+    \u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u043C\u0435\u0434\u0438\u0446\u0438\u043D\u0441\u043A\u0438\u0445
+    \u043A\u0430\u0440\u0442\n2. \u0410\u043A\u043A\u0440\u0435\u0434\u0438\u0442\u043E\u0432\u0430\u043D\u043D\u044B\u0435
+    \u043A\u043B\u0438\u043D\u0438\u043A\u0438\n\n1. \u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430
+    \u043C\u0435\u0434\u0438\u0446\u0438\u043D\u0441\u043A\u0438\u0445 \u043A\u0430\u0440\u0442\n\u041F\u043E\u043B:
+    \u0434\u043E\u043B\u0436\u0435\u043D \u0441\u043E\u0432\u043F\u0430\u0434\u0430\u0442\u044C
+    \u0441 \u0432\u043D\u0435\u0448\u043D\u043E\u0441\u0442\u044C\u044E \u043F\u0430\u0446\u0438\u0435\u043D\u0442\u0430.
+    \u041C \u2014 \u043C\u0443\u0436\u0447\u0438\u043D\u0430, \u0416 \u2014 \u0436\u0435\u043D\u0449\u0438\u043D\u0430.\n\u0412\u044B\u0434\u0430\u043D\u0430:
+    \u0443\u0447\u0440\u0435\u0436\u0434\u0435\u043D\u0438\u0435, \u0432\u044B\u0434\u0430\u0432\u0448\u0435\u0435
+    \u043A\u0430\u0440\u0442\u0443, \u0434\u043E\u043B\u0436\u043D\u043E \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043E\u0432\u0430\u0442\u044C
+    \u0438 \u0432\u0445\u043E\u0434\u0438\u0442\u044C \u0432 \u0441\u043F\u0438\u0441\u043E\u043A
+    \u0430\u043A\u043A\u0440\u0435\u0434\u0438\u0442\u043E\u0432\u0430\u043D\u043D\u044B\u0445
+    \u043A\u043B\u0438\u043D\u0438\u043A \u0440\u0435\u0433\u0438\u043E\u043D\u0430.\n\u0413\u043E\u0434\u043D\u0430
+    \u0434\u043E: \u0434\u0430\u0442\u0430 \u0434\u043E\u043B\u0436\u043D\u0430 \u0431\u044B\u0442\u044C
+    \u043F\u043E\u0437\u0436\u0435 \u0442\u0435\u043A\u0443\u0449\u0435\u0439 \u0434\u0430\u0442\u044B
+    \u043D\u0430 \u043A\u0430\u043B\u0435\u043D\u0434\u0430\u0440\u0435.\n\u041D\u0430\u043B\u0438\u0447\u0438\u0435
+    \u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u0430: \u0443 \u043A\u0430\u0436\u0434\u043E\u0433\u043E
+    \u043F\u0430\u0446\u0438\u0435\u043D\u0442\u0430 \u0434\u043E\u043B\u0436\u043D\u0430
+    \u0431\u044B\u0442\u044C \u043C\u0435\u0434\u043A\u0430\u0440\u0442\u0430.\n\n2.
+    \u0410\u043A\u043A\u0440\u0435\u0434\u0438\u0442\u043E\u0432\u0430\u043D\u043D\u044B\u0435
+    \u043A\u043B\u0438\u043D\u0438\u043A\u0438\n\u0421\u0435\u0432\u0435\u0440\u043E\u0434\u0432\u0438\u043D\u0441\u043A\u0438\u0439
+    \u0440\u0435\u0433\u0438\u043E\u043D: \u041C\u0421\u0427 \"\u041F\u043E\u043B\u044F\u0440\u043D\u0430\u044F\";
+    \u041A\u0411-41 \"\u041C\u043E\u0440\u043E\u0437\"; \u0411\u043E\u043B\u044C\u043D\u0438\u0446\u0430
+    \u0438\u043C\u0435\u043D\u0438 \u0425\u043E\u043B\u043E\u0434\u0430.\n\u0417\u0430\u043B\u0435\u0441\u0441\u043A\u0438\u0439
+    \u0440\u0435\u0433\u0438\u043E\u043D: \u0414\u0443\u0431\u0440\u0430\u0432\u0430
+    \u0426\u0420\u0411; \u041F\u043E\u043B\u0438\u043A\u043B\u0438\u043D\u0438\u043A\u0430
+    \u2116 9; \u0421\u0430\u043D\u0430\u0442\u043E\u0440\u0438\u0439 \"\u0418\u0441\u0442\u043E\u043A\".\n\u041F\u0440\u0438\u0433\u043E\u0440\u0441\u043A\u0438\u0439
+    \u043E\u043A\u0440\u0443\u0433: \u041C\u0435\u0434\u0446\u0435\u043D\u0442\u0440
+    \"\u0412\u044B\u0441\u043E\u0442\u043A\u0430\"; \u041A\u043B\u0438\u043D\u0438\u043A\u0430
+    \"\u0425\u0440\u0435\u0431\u0435\u0442\"; \u041C\u0421\u0427 \"\u0413\u0440\u0430\u043D\u0438\u0442\".\n\u041C\u0435\u0436\u0434\u0443\u0440\u0435\u0447\u0435\u043D\u0441\u043A\u0438\u0439
+    \u0443\u0437\u0435\u043B: \u0417\u0430\u0432\u043E\u0434\u0441\u043A\u0430\u044F
+    \u0431\u043E\u043B\u044C\u043D\u0438\u0446\u0430; \u041A\u0411-12 \"\u041F\u0440\u0438\u0447\u0430\u043B\";
+    \u041C\u0435\u0434\u0446\u0435\u043D\u0442\u0440 \"\u0420\u0443\u0441\u043B\u043E\".\n\u0421\u0442\u0435\u043F\u043D\u043E\u0432\u0441\u043A\u0430\u044F
+    \u0433\u0443\u0431\u0435\u0440\u043D\u0438\u044F: \u041A\u043E\u0432\u044B\u043B\u044C\u0441\u043A\u0430\u044F
+    \u0431\u043E\u043B\u044C\u043D\u0438\u0446\u0430; \u041A\u0411-5 \"\u041C\u0430\u0440\u0435\u0432\u043E\";
+    \u041C\u0435\u0434\u0441\u0430\u043D\u0447\u0430\u0441\u0442\u044C \"\u0417\u0430\u043A\u0430\u0442\".\n\u041E\u0437\u0435\u0440\u0441\u043A\u0438\u0439
+    \u043F\u0440\u043E\u0442\u0435\u043A\u0442\u043E\u0440\u0430\u0442: \u041D\u0418\u0418
+    \"\u0413\u043B\u0443\u0431\u0438\u043D\u0430\"; \u041A\u043B\u0438\u043D\u0438\u043A\u0430
+    \"\u0420\u044F\u0431\u044C\"; \u041C\u0421\u0427 \"\u041A\u0430\u043C\u044B\u0448\".\n\u041E\u0441\u0442\u0440\u043E\u0436\u0441\u043A\u0438\u0439
+    \u0441\u0435\u043A\u0442\u043E\u0440: \u0422\u044E\u0440\u0435\u043C\u043D\u0430\u044F
+    \u041C\u0421\u0427; \u041A\u0411-88 \"\u0417\u0430\u0441\u043B\u043E\u043D\";
+    \u0411\u043E\u043B\u044C\u043D\u0438\u0446\u0430 \"\u0412\u0435\u0447\u0435\"."
+  audioSource: {fileID: 295718301}
+  hoverSound: {fileID: 0}
+  sfxMixerGroup: {fileID: 0}
+  hoverColor: {r: 0.62, g: 0.62, b: 0.62, a: 1}
 --- !u!1 &304659300
 GameObject:
   m_ObjectHideFlags: 0
@@ -1760,12 +1996,53 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: "\u0421\u043F\u0440\u0430\u0432\u043E\u0447\u043D\u0438\u043A \u0432\u0440\u0430\u0447\u0430\n\n\u0421\u043E\u0434\u0435\u0440\u0436\u0430\u043D\u0438\u0435\n1.
+    \u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u043C\u0435\u0434\u0438\u0446\u0438\u043D\u0441\u043A\u0438\u0445
+    \u043A\u0430\u0440\u0442\n2. \u0410\u043A\u043A\u0440\u0435\u0434\u0438\u0442\u043E\u0432\u0430\u043D\u043D\u044B\u0435
+    \u043A\u043B\u0438\u043D\u0438\u043A\u0438\n\n1. \u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430
+    \u043C\u0435\u0434\u0438\u0446\u0438\u043D\u0441\u043A\u0438\u0445 \u043A\u0430\u0440\u0442\n\u041F\u043E\u043B:
+    \u0434\u043E\u043B\u0436\u0435\u043D \u0441\u043E\u0432\u043F\u0430\u0434\u0430\u0442\u044C
+    \u0441 \u0432\u043D\u0435\u0448\u043D\u043E\u0441\u0442\u044C\u044E \u043F\u0430\u0446\u0438\u0435\u043D\u0442\u0430.
+    \u041C \u2014 \u043C\u0443\u0436\u0447\u0438\u043D\u0430, \u0416 \u2014 \u0436\u0435\u043D\u0449\u0438\u043D\u0430.\n\u0412\u044B\u0434\u0430\u043D\u0430:
+    \u0443\u0447\u0440\u0435\u0436\u0434\u0435\u043D\u0438\u0435, \u0432\u044B\u0434\u0430\u0432\u0448\u0435\u0435
+    \u043A\u0430\u0440\u0442\u0443, \u0434\u043E\u043B\u0436\u043D\u043E \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043E\u0432\u0430\u0442\u044C
+    \u0438 \u0432\u0445\u043E\u0434\u0438\u0442\u044C \u0432 \u0441\u043F\u0438\u0441\u043E\u043A
+    \u0430\u043A\u043A\u0440\u0435\u0434\u0438\u0442\u043E\u0432\u0430\u043D\u043D\u044B\u0445
+    \u043A\u043B\u0438\u043D\u0438\u043A \u0440\u0435\u0433\u0438\u043E\u043D\u0430.\n\u0413\u043E\u0434\u043D\u0430
+    \u0434\u043E: \u0434\u0430\u0442\u0430 \u0434\u043E\u043B\u0436\u043D\u0430 \u0431\u044B\u0442\u044C
+    \u043F\u043E\u0437\u0436\u0435 \u0442\u0435\u043A\u0443\u0449\u0435\u0439 \u0434\u0430\u0442\u044B
+    \u043D\u0430 \u043A\u0430\u043B\u0435\u043D\u0434\u0430\u0440\u0435.\n\u041D\u0430\u043B\u0438\u0447\u0438\u0435
+    \u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u0430: \u0443 \u043A\u0430\u0436\u0434\u043E\u0433\u043E
+    \u043F\u0430\u0446\u0438\u0435\u043D\u0442\u0430 \u0434\u043E\u043B\u0436\u043D\u0430
+    \u0431\u044B\u0442\u044C \u043C\u0435\u0434\u043A\u0430\u0440\u0442\u0430.\n\n2.
+    \u0410\u043A\u043A\u0440\u0435\u0434\u0438\u0442\u043E\u0432\u0430\u043D\u043D\u044B\u0435
+    \u043A\u043B\u0438\u043D\u0438\u043A\u0438\n\u0421\u0435\u0432\u0435\u0440\u043E\u0434\u0432\u0438\u043D\u0441\u043A\u0438\u0439
+    \u0440\u0435\u0433\u0438\u043E\u043D: \u041C\u0421\u0427 \"\u041F\u043E\u043B\u044F\u0440\u043D\u0430\u044F\";
+    \u041A\u0411-41 \"\u041C\u043E\u0440\u043E\u0437\"; \u0411\u043E\u043B\u044C\u043D\u0438\u0446\u0430
+    \u0438\u043C\u0435\u043D\u0438 \u0425\u043E\u043B\u043E\u0434\u0430.\n\u0417\u0430\u043B\u0435\u0441\u0441\u043A\u0438\u0439
+    \u0440\u0435\u0433\u0438\u043E\u043D: \u0414\u0443\u0431\u0440\u0430\u0432\u0430
+    \u0426\u0420\u0411; \u041F\u043E\u043B\u0438\u043A\u043B\u0438\u043D\u0438\u043A\u0430
+    \u2116 9; \u0421\u0430\u043D\u0430\u0442\u043E\u0440\u0438\u0439 \"\u0418\u0441\u0442\u043E\u043A\".\n\u041F\u0440\u0438\u0433\u043E\u0440\u0441\u043A\u0438\u0439
+    \u043E\u043A\u0440\u0443\u0433: \u041C\u0435\u0434\u0446\u0435\u043D\u0442\u0440
+    \"\u0412\u044B\u0441\u043E\u0442\u043A\u0430\"; \u041A\u043B\u0438\u043D\u0438\u043A\u0430
+    \"\u0425\u0440\u0435\u0431\u0435\u0442\"; \u041C\u0421\u0427 \"\u0413\u0440\u0430\u043D\u0438\u0442\".\n\u041C\u0435\u0436\u0434\u0443\u0440\u0435\u0447\u0435\u043D\u0441\u043A\u0438\u0439
+    \u0443\u0437\u0435\u043B: \u0417\u0430\u0432\u043E\u0434\u0441\u043A\u0430\u044F
+    \u0431\u043E\u043B\u044C\u043D\u0438\u0446\u0430; \u041A\u0411-12 \"\u041F\u0440\u0438\u0447\u0430\u043B\";
+    \u041C\u0435\u0434\u0446\u0435\u043D\u0442\u0440 \"\u0420\u0443\u0441\u043B\u043E\".\n\u0421\u0442\u0435\u043F\u043D\u043E\u0432\u0441\u043A\u0430\u044F
+    \u0433\u0443\u0431\u0435\u0440\u043D\u0438\u044F: \u041A\u043E\u0432\u044B\u043B\u044C\u0441\u043A\u0430\u044F
+    \u0431\u043E\u043B\u044C\u043D\u0438\u0446\u0430; \u041A\u0411-5 \"\u041C\u0430\u0440\u0435\u0432\u043E\";
+    \u041C\u0435\u0434\u0441\u0430\u043D\u0447\u0430\u0441\u0442\u044C \"\u0417\u0430\u043A\u0430\u0442\".\n\u041E\u0437\u0435\u0440\u0441\u043A\u0438\u0439
+    \u043F\u0440\u043E\u0442\u0435\u043A\u0442\u043E\u0440\u0430\u0442: \u041D\u0418\u0418
+    \"\u0413\u043B\u0443\u0431\u0438\u043D\u0430\"; \u041A\u043B\u0438\u043D\u0438\u043A\u0430
+    \"\u0420\u044F\u0431\u044C\"; \u041C\u0421\u0427 \"\u041A\u0430\u043C\u044B\u0448\".\n\u041E\u0441\u0442\u0440\u043E\u0436\u0441\u043A\u0438\u0439
+    \u0441\u0435\u043A\u0442\u043E\u0440: \u0422\u044E\u0440\u0435\u043C\u043D\u0430\u044F
+    \u041C\u0421\u0427; \u041A\u0411-88 \"\u0417\u0430\u0441\u043B\u043E\u043D\";
+    \u0411\u043E\u043B\u044C\u043D\u0438\u0446\u0430 \"\u0412\u0435\u0447\u0435\"."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1dddc11a415bbde41b52057c23aabae8, type: 2}
-  m_sharedMaterial: {fileID: 850849469055703587, guid: 1dddc11a415bbde41b52057c23aabae8, type: 2}
+  m_sharedMaterial: {fileID: 1057731400}
   m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
+  m_fontMaterial: {fileID: 1057731400}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
@@ -1782,20 +2059,20 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42
-  m_fontSizeBase: 42
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
@@ -3421,6 +3698,115 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050060129}
   m_CullTransparentMesh: 1
+--- !u!21 &1057731400
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PTSans-Regular SDF Material (Instance)
+  m_Shader: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Cube:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FaceTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: -103009462864676790, guid: 1dddc11a415bbde41b52057c23aabae8, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OutlineTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Ambient: 0.5
+    - _Bevel: 0.5
+    - _BevelClamp: 0
+    - _BevelOffset: 0
+    - _BevelRoundness: 0
+    - _BevelWidth: 0
+    - _BumpFace: 0
+    - _BumpOutline: 0
+    - _ColorMask: 15
+    - _CullMode: 0
+    - _Diffuse: 0.5
+    - _FaceDilate: 0
+    - _FaceUVSpeedX: 0
+    - _FaceUVSpeedY: 0
+    - _GlowInner: 0.05
+    - _GlowOffset: 0
+    - _GlowOuter: 0.05
+    - _GlowPower: 0.75
+    - _GradientScale: 7
+    - _LightAngle: 3.1416
+    - _MaskSoftnessX: 0
+    - _MaskSoftnessY: 0
+    - _OutlineSoftness: 0
+    - _OutlineUVSpeedX: 0
+    - _OutlineUVSpeedY: 0
+    - _OutlineWidth: 0.3
+    - _PerspectiveFilter: 0.875
+    - _Reflectivity: 10
+    - _ScaleRatioA: 0.85714287
+    - _ScaleRatioB: 0.6964286
+    - _ScaleRatioC: 0.6964286
+    - _ScaleX: 1
+    - _ScaleY: 1
+    - _ShaderFlags: 0
+    - _Sharpness: 0
+    - _SpecularPower: 2
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _TextureHeight: 512
+    - _TextureWidth: 512
+    - _UnderlayDilate: 0
+    - _UnderlayOffsetX: 0
+    - _UnderlayOffsetY: 0
+    - _UnderlaySoftness: 0
+    - _VertexOffsetX: 0
+    - _VertexOffsetY: 0
+    - _WeightBold: 0.75
+    - _WeightNormal: 0
+    m_Colors:
+    - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
+    - _EnvMatrixRotation: {r: 0, g: 0, b: 0, a: 0}
+    - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
+    - _GlowColor: {r: 0, g: 1, b: 0, a: 0.5}
+    - _MaskCoord: {r: 0, g: 0, b: 32767, a: 32767}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 0.7490196}
+    - _ReflectFaceColor: {r: 0, g: 0, b: 0, a: 1}
+    - _ReflectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
+    - _UnderlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1 &1100013470
 GameObject:
   m_ObjectHideFlags: 0
@@ -3734,7 +4120,11 @@ RectTransform:
   - {fileID: 687831779}
   - {fileID: 151623814}
   - {fileID: 1605437610}
+<<<<<<< Updated upstream
   - {fileID: 43016518}
+=======
+  - {fileID: 295718300}
+>>>>>>> Stashed changes
   - {fileID: 411118604}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4104,6 +4494,8 @@ MonoBehaviour:
   audioSource: {fileID: 1384969762}
   hoverSound: {fileID: 0}
   sfxMixerGroup: {fileID: 1308846463672463071, guid: 83b9f94bb8100984db9442e8641a5ab9, type: 2}
+  useHoverColor: 0
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
   hoverAlpha: 0.8
 --- !u!114 &1384969764
 MonoBehaviour:
@@ -5374,6 +5766,42 @@ MonoBehaviour:
   - "\u0416\u0435\u043D\u0441\u043A\u0438\u0439"
   - "\u0416\u0435\u043D\u0441\u043A\u0438\u0439"
   - "\u041C\u0443\u0436\u0441\u043A\u043E\u0439"
+  checkMedicalRecords: 1
+  currentCalendarDate: 03.05.2026
+  medicalRecords:
+  - hasCard: 1
+    gender: "\u0416"
+    region: "\u0421\u0435\u0432\u0435\u0440\u043E\u0434\u0432\u0438\u043D\u0441\u043A\u0438\u0439
+      \u0440\u0435\u0433\u0438\u043E\u043D"
+    issuingHospital: "\u041C\u0421\u0427 \"\u041F\u043E\u043B\u044F\u0440\u043D\u0430\u044F\""
+    expirationDate: 04.05.2026
+  - hasCard: 1
+    gender: "\u041C"
+    region: "\u0417\u0430\u043B\u0435\u0441\u0441\u043A\u0438\u0439 \u0440\u0435\u0433\u0438\u043E\u043D"
+    issuingHospital: "\u0414\u0443\u0431\u0440\u0430\u0432\u0430 \u0426\u0420\u0411"
+    expirationDate: 04.05.2026
+  - hasCard: 1
+    gender: "\u041C"
+    region: "\u041F\u0440\u0438\u0433\u043E\u0440\u0441\u043A\u0438\u0439 \u043E\u043A\u0440\u0443\u0433"
+    issuingHospital: "\u041A\u043B\u0438\u043D\u0438\u043A\u0430 \"\u0425\u0440\u0435\u0431\u0435\u0442\""
+    expirationDate: 04.05.2026
+  - hasCard: 1
+    gender: "\u0416"
+    region: "\u041C\u0435\u0436\u0434\u0443\u0440\u0435\u0447\u0435\u043D\u0441\u043A\u0438\u0439
+      \u0443\u0437\u0435\u043B"
+    issuingHospital: "\u041C\u0435\u0434\u0446\u0435\u043D\u0442\u0440 \"\u0420\u0443\u0441\u043B\u043E\""
+    expirationDate: 04.05.2026
+  - hasCard: 1
+    gender: "\u0416"
+    region: "\u0421\u0442\u0435\u043F\u043D\u043E\u0432\u0441\u043A\u0430\u044F \u0433\u0443\u0431\u0435\u0440\u043D\u0438\u044F"
+    issuingHospital: "\u041C\u0435\u0434\u0441\u0430\u043D\u0447\u0430\u0441\u0442\u044C
+      \"\u0417\u0430\u043A\u0430\u0442\""
+    expirationDate: 04.05.2026
+  - hasCard: 1
+    gender: "\u041C"
+    region: "\u041E\u0437\u0435\u0440\u0441\u043A\u0438\u0439 \u043F\u0440\u043E\u0442\u0435\u043A\u0442\u043E\u0440\u0430\u0442"
+    issuingHospital: "\u041D\u0418\u0418 \"\u0413\u043B\u0443\u0431\u0438\u043D\u0430\""
+    expirationDate: 04.05.2026
   patientBirth:
   - 13.05.1992
   - 31.02.1983
@@ -5690,6 +6118,12 @@ MonoBehaviour:
   modal: {fileID: 1605437611}
   patientName: 
   patientSex: 
+  medicalRecord:
+    hasCard: 1
+    gender: 
+    region: 
+    issuingHospital: 
+    expirationDate: 
   patientBirth: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

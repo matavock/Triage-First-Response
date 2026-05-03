@@ -8,6 +8,7 @@ public class Passport : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public PassportController modal;
     public string patientName;
     public string patientSex;
+    public MedicalRecordData medicalRecord;
     public string patientBirth;
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -22,7 +23,7 @@ public class Passport : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        // выделение назад
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
         if (licenseImage != null)
         {
             var c = licenseImage.color;
@@ -33,13 +34,14 @@ public class Passport : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        modal.Show(patientName, patientSex, patientBirth);
+        modal.Show(patientName, patientSex, patientBirth, medicalRecord);
     }
 
-    public void SetPatientInfo(string name, string sex, string birth)
+    public void SetPatientInfo(string name, string sex, string birth, MedicalRecordData record = null)
     {
         patientName = name;
         patientSex = sex;
         patientBirth = birth;
+        medicalRecord = record;
     }
 }

@@ -11,18 +11,22 @@ public class ClipboardHover : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     public GameObject rulesPanel;
     public TMP_Text rulesText;
 
-    [Header("Контент правила для этого дня")]
+    [Header("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ")]
     [TextArea]
     public string rulesContent;
 
-    [Header("Звук")]
+    [Header("пїЅпїЅпїЅпїЅ")]
     public AudioSource audioSource;
     public AudioClip hoverSound;
     public AudioMixerGroup sfxMixerGroup;
 
-    [Header("Эффект наведения")]
+    [Header("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")]
+    public bool useHoverColor = false;
+    public Color hoverColor = Color.white;
+
     public float hoverAlpha = 0.8f;
 
+    private Color originalColor;
     private float originalAlpha;
 
     void Start()
@@ -40,43 +44,60 @@ public class ClipboardHover : MonoBehaviour, IPointerEnterHandler, IPointerExitH
             rulesPanel.SetActive(false);
 
         if (clipboardImage != null)
+        {
+            originalColor = clipboardImage.color;
             originalAlpha = clipboardImage.color.a;
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        // подсветка клипборда
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         if (clipboardImage != null)
         {
-            var c = clipboardImage.color;
-            c.a = hoverAlpha;
-            clipboardImage.color = c;
+            if (useHoverColor)
+            {
+                clipboardImage.color = hoverColor;
+            }
+            else
+            {
+                var c = clipboardImage.color;
+                c.a = hoverAlpha;
+                clipboardImage.color = c;
+            }
         }
 
-        // показать панель с правилами
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         if (rulesPanel != null)
             rulesPanel.SetActive(true);
 
-        // установить текст правил
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         if (rulesText != null)
             rulesText.text = rulesContent;
 
-        // звук при наведении
+        // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         if (audioSource != null && hoverSound != null)
             audioSource.PlayOneShot(hoverSound);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        // вернуть альфу
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
         if (clipboardImage != null)
         {
-            var c = clipboardImage.color;
-            c.a = originalAlpha;
-            clipboardImage.color = c;
+            if (useHoverColor)
+            {
+                clipboardImage.color = originalColor;
+            }
+            else
+            {
+                var c = clipboardImage.color;
+                c.a = originalAlpha;
+                clipboardImage.color = c;
+            }
         }
 
-        // спрятать панель с правилами
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         if (rulesPanel != null)
             rulesPanel.SetActive(false);
     }

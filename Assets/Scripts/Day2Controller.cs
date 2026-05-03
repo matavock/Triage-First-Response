@@ -4,8 +4,20 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.Collections.Generic;
+using System.Globalization;
 using System;
 using Unity.VectorGraphics;
+
+    [Serializable]
+    public class MedicalRecordData
+    {
+        public bool hasCard = true;
+        public string gender;
+        public string region;
+        public string issuingHospital;
+        public string expirationDate;
+    }
 
 public class Day2Controller : MonoBehaviour
 {
@@ -13,44 +25,44 @@ public class Day2Controller : MonoBehaviour
     public Image patientImage;
     public Image dialogueImage;
 
-    [Header("œ‡ˆËÂÌÚ˚ (ÒÔ‡ÈÚ˚) Ë ÓÍÌÓ ‰Ë‡ÎÓ„‡")]
-    public Sprite[] patientSprites;        // ËÁÓ·‡ÊÂÌËˇ ÔÓ ÔÓˇ‰ÍÛ
+    [Header("ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ (ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ) ÔøΩ ÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ")]
+    public Sprite[] patientSprites;        // ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
     public Sprite dialogueSprites;
 
-    [Header("œ‡ˆËÂÌÚ˚ (‰Ë‡ÎÓ„Ë)")]
+    [Header("ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ (ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ)")]
     public string[] patientDialogues;
     public TMP_Text dialogue;
 
-    [Header("œ‡‚ËÎ¸Ì˚Â ÓÚ‚ÂÚ˚")]
-    public bool[] correctAnswers;          // true = ‰ÓÎÊÂÌ ·˚Ú¸ ÔËÌˇÚ, false = ÓÚÍ‡Á‡Ú¸
+    [Header("ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ")]
+    public bool[] correctAnswers;          // true = ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ, false = ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
 
-    [Header("œ‡ˆËÂÌÚ˚ (ƒÂÔÂÒÒËˇ ÔËÌˇÚËˇ)")]
+    [Header("ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ (ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ)")]
     public int[] acceptDepressionValue;
 
-    [Header("œ‡ˆËÂÌÚ˚ (ƒÂÔÂÒÒËˇ ÓÚÍ‡Á‡)")]
+    [Header("ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ (ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ)")]
     public int[] rejectDepressionValue;
 
-    [Header("œ‡ˆËÂÌÚ˚ (ƒÂÌÂÊÌ‡ˇ ˆÂÌ‡ ÔËÌˇÚËˇ)")]
+    [Header("ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ (ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ)")]
     public int[] acceptWealthValue;
 
-    [Header("œ‡ˆËÂÌÚ˚ (ƒÂÌÂÊÌ‡ˇ ˆÂÌ‡ ÓÚÍ‡Á‡)")]
+    [Header("ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ (ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ)")]
     public int[] rejectWealthValue;
 
-    [Header("Õ‡ÒÚÓÈÍË")]
+    [Header("ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ")]
     public float delayBetweenPatients = 1.0f;
     public string summarySceneName = "DaySummary";
 
     [Header("Sound")]
-    public AudioSource paperAudioSource;   // Ó·˙ÂÍÚ Ò AudioSource
-    public AudioClip paperAppearSound;     // Á‚ÛÍ ·ÛÏ‡„Ë
+    public AudioSource paperAudioSource;   // ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩ AudioSource
+    public AudioClip paperAppearSound;     // ÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
     public AudioMixerGroup sfxMixerGroup;
     /*
-    public AudioSource passportAudioSource;   // Ó·˙ÂÍÚ Ò AudioSource
-    public AudioClip passportAppearSound;     // Á‚ÛÍ Ô‡ÒÔÓÚ‡
+    public AudioSource passportAudioSource;   // ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩ AudioSource
+    public AudioClip passportAppearSound;     // ÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
     */
 
     [Header("Sliders")]
-    public Slider depressionSlider;   // Ó·˙ÂÍÚ Ò AudioSource
+    public Slider depressionSlider;   // ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩ AudioSource
     public Slider wealthSlider;
 
     private int currentIndex = -1;
@@ -60,6 +72,11 @@ public class Day2Controller : MonoBehaviour
     public int[] patientAges;
     public string[] patientComplaints;
     public string[] patientSex;
+
+    [Header("–ú–µ–¥–∫–∞—Ä—Ç—ã")]
+    public bool checkMedicalRecords = true;
+    public string currentCalendarDate = "03.05.2026";
+    public MedicalRecordData[] medicalRecords;
     public string[] patientBirth;
 
     public Paper Paper;
@@ -84,11 +101,11 @@ public class Day2Controller : MonoBehaviour
         DayStats.wealth = PlayerPrefs.GetInt("Wealth", 50);
         DayStats.Reset();
 
-        // Ó·˘ÂÂ ˜ËÒÎÓ Ô‡ˆËÂÌÚÓ‚ ‚ ‰ÌÂ
+        // ÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩ ÔøΩÔøΩÔøΩ
         DayStats.total = patientSprites.Length;
 
 
-        // ÒÚ‡ÚÛÂÏ ‰ÂÌ¸ Ò Á‡‰ÂÊÍÓÈ ÔÓˇ‚ÎÂÌËˇ ÔÂ‚Ó„Ó Ô‡ˆËÂÌÚ‡
+        // ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩ ÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
         StartCoroutine(DelayedStartFirstPatient());
 
         if (paperAudioSource != null && sfxMixerGroup != null)
@@ -102,13 +119,13 @@ public class Day2Controller : MonoBehaviour
     }
 
     // ----------------------------
-    //       ÕŒœ ¿ "œ–»Õﬂ“‹"
+    //      ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ "ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ"
     // ----------------------------
     public void OnAdmitButtonPressed()
     {
         if (isSwitching) return;
 
-        bool correct = correctAnswers[currentIndex] == true;
+        bool correct = IsCurrentPatientAcceptable() == true;
         DayStats.depression += acceptDepressionValue[currentIndex];
         depressionSlider.value = DayStats.depression;
         //DayStats.depression += acceptDepressionValue[currentIndex];
@@ -122,13 +139,13 @@ public class Day2Controller : MonoBehaviour
     }
 
     // ----------------------------
-    //       ÕŒœ ¿ "Œ“ ¿«¿“‹"
+    //      ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ "ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ"
     // ----------------------------
     public void OnRejectButtonPressed()
     {
         if (isSwitching) return;
 
-        bool correct = correctAnswers[currentIndex] == false;
+        bool correct = IsCurrentPatientAcceptable() == false;
         DayStats.depression += rejectDepressionValue[currentIndex];
         depressionSlider.value = DayStats.depression;
         DayStats.wealth += rejectWealthValue[currentIndex];
@@ -139,7 +156,7 @@ public class Day2Controller : MonoBehaviour
         StartCoroutine(SwitchToNextPatient());
     }
 
-    // ÎÓ„ËÍ‡ ÔÂÂıÓ‰‡ Í ÌÓ‚ÓÏÛ Ô‡ˆËÂÌÚÛ
+    // ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
     private IEnumerator SwitchToNextPatient()
     {
         isSwitching = true;
@@ -176,12 +193,12 @@ public class Day2Controller : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        // ÔÓÍ‡Á˚‚‡ÂÏ ·ÛÏ‡„Û
+        // ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
         if (paperObject != null && patientImage.gameObject.activeSelf)
         {
             paperObject.SetActive(true);
 
-            // ¬ÓÒÔÓËÁ‚ÂÒÚË Á‚ÛÍ Œƒ»Õ ‡Á ó ÔË ÔÓˇ‚ÎÂÌËË
+            // ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩ ÔøΩ ÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
             if (paperAudioSource != null && paperAppearSound != null)
             {
                 paperAudioSource.PlayOneShot(paperAppearSound);
@@ -195,12 +212,12 @@ public class Day2Controller : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        // ÔÓÍ‡Á˚‚‡ÂÏ ·ÛÏ‡„Û
+        // ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
         if (passportObject != null && patientImage.gameObject.activeSelf)
         {
             passportObject.SetActive(true);
             /*
-            // ¬ÓÒÔÓËÁ‚ÂÒÚË Á‚ÛÍ Œƒ»Õ ‡Á ó ÔË ÔÓˇ‚ÎÂÌËË
+            // ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩ ÔøΩ ÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
             if (paperAudioSource != null && paperAppearSound != null)
             {
                 paperAudioSource.PlayOneShot(paperAppearSound);
@@ -216,71 +233,212 @@ public class Day2Controller : MonoBehaviour
     {
         currentIndex++;
 
-        // ‚ÒÂ Ô‡ˆËÂÌÚ˚ Á‡ÍÓÌ˜ËÎËÒ¸
+        // ÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
         if (currentIndex >= patientSprites.Length)
         {
             EndDayAndGoToSummary();
             return;
         }
 
-        // — –€¬¿≈Ã œ¿Õ≈À‹  ÕŒœŒ  ƒÀﬂ ÕŒ¬Œ√Œ  À»≈Õ“¿
+        // ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
         if (extraButtonsPanel != null)
             extraButtonsPanel.SetActive(false);
 
-        // Œ“Ã≈Õﬂ≈Ã ÒÚ‡Û˛ ÍÓÛÚËÌÛ ÔÓˇ‚ÎÂÌËˇ ·ÛÏ‡„Ë, ÂÒÎË Â˘∏ ‡·ÓÚ‡Î‡
+        // ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ, ÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
         if (paperCoroutine != null)
         {
             StopCoroutine(paperCoroutine);
             paperCoroutine = null;
         }
 
-        // Œ“Ã≈Õﬂ≈Ã ÒÚ‡Û˛ ÍÓÛÚËÌÛ ÔÓˇ‚ÎÂÌËˇ Ô‡ÒÒÔÓÚ‡, ÂÒÎË Â˘∏ ‡·ÓÚ‡Î‡
+        // ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ, ÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
         if (paperCoroutine != null)
         {
             StopCoroutine(paperCoroutine);
             paperCoroutine = null;
         }
 
-        // — –€¬¿≈Ã ·ÛÏ‡„Û ÔÂÂ‰ ÔÓÍ‡ÁÓÏ ÌÓ‚Ó„Ó Ô‡ˆËÂÌÚ‡
+        // ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
         if (paperObject != null)
             paperObject.SetActive(false);
 
-        // — –€¬¿≈Ã ·ÛÏ‡„Û ÔÂÂ‰ ÔÓÍ‡ÁÓÏ ÌÓ‚Ó„Ó Ô‡ˆËÂÌÚ‡
+        // ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
         if (passportObject != null)
             passportObject.SetActive(false);
 
-        // œŒ ¿«€¬¿≈Ã ÕŒ¬Œ√Œ œ¿÷»≈Õ“¿
+        // ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
         patientImage.sprite = patientSprites[currentIndex];
         patientImage.color = new Color(1f, 1f, 1f, 1f);
         patientImage.gameObject.SetActive(true);
 
-        // œŒ ¿«€¬¿≈Ã ƒ»¿ÀŒ√ ÕŒ¬Œ√Œ œ¿÷»≈Õ“¿
+        // ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
         dialogueImage.sprite = dialogueSprites;
         dialogue.text = patientDialogues[currentIndex];
         dialogueImage.color = new Color(1f, 1f, 1f, 1f);
         dialogueImage.gameObject.SetActive(true);
         dialogue.gameObject.SetActive(true);
 
-        // «¿œ”— ¿≈Ã «¿ƒ≈–∆ ” Õ¿ œŒﬂ¬À≈Õ»≈ ¡”Ã¿√»
+        // ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
         paperCoroutine = StartCoroutine(ShowPaperWithDelay(0.35f));
 
-        // «¿œ”— ¿≈Ã «¿ƒ≈–∆ ” Õ¿ œŒﬂ¬À≈Õ»≈ œ¿—œŒ–“¿
+        // ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
         passportCoroutine = StartCoroutine(ShowPassportWithDelay(0.70f));
 
-        // Œ¡ÕŒ¬Àﬂ≈Ã ¡”Ã¿√”
+        // ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
         Paper.SetPatientInfo(
             patientNames[currentIndex],
             patientAges[currentIndex],
-            patientComplaints[currentIndex]
+            patientComplaints[currentIndex],
+            IsCurrentPatientAcceptable()
         );
 
-        // Œ¡ÕŒ¬Àﬂ≈Ã œ¿—œŒ–“
+        // ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
         Passport.SetPatientInfo(
             patientPassportNames[currentIndex],
             patientSex[currentIndex],
-            patientBirth[currentIndex]
+            patientBirth[currentIndex],
+            GetMedicalRecord(currentIndex)
         );
     }
+    private bool IsCurrentPatientAcceptable()
+    {
+        bool baseAnswer = currentIndex >= 0 && currentIndex < correctAnswers.Length && correctAnswers[currentIndex];
+
+        if (!checkMedicalRecords || !HasConfiguredMedicalRecords())
+            return baseAnswer;
+
+        return baseAnswer && IsMedicalRecordValid(currentIndex);
+    }
+
+    private bool HasConfiguredMedicalRecords()
+    {
+        return medicalRecords != null && medicalRecords.Length > 0;
+    }
+
+    private MedicalRecordData GetMedicalRecord(int index)
+    {
+        if (!HasConfiguredMedicalRecords() || index < 0 || index >= medicalRecords.Length)
+            return null;
+
+        return medicalRecords[index];
+    }
+
+    private bool IsMedicalRecordValid(int index)
+    {
+        MedicalRecordData record = GetMedicalRecord(index);
+        if (record == null || !record.hasCard)
+            return false;
+
+        return GenderMatchesAppearance(index, record.gender)
+            && IsAccreditedIssuer(record.region, record.issuingHospital)
+            && IsExpirationDateValid(record.expirationDate);
+    }
+
+    private bool GenderMatchesAppearance(int index, string gender)
+    {
+        string normalizedGender = NormalizeGender(gender);
+        if (string.IsNullOrEmpty(normalizedGender))
+            return false;
+
+        string appearanceGender = GetAppearanceGender(index);
+        return !string.IsNullOrEmpty(appearanceGender) && normalizedGender == appearanceGender;
+    }
+
+    private string GetAppearanceGender(int index)
+    {
+        if (patientSprites == null || index < 0 || index >= patientSprites.Length || patientSprites[index] == null)
+            return string.Empty;
+
+        string spriteName = patientSprites[index].name;
+        if (spriteName.IndexOf("Woman", StringComparison.OrdinalIgnoreCase) >= 0)
+            return "F";
+        if (spriteName.IndexOf("Man", StringComparison.OrdinalIgnoreCase) >= 0)
+            return "M";
+
+        return string.Empty;
+    }
+
+    private string NormalizeGender(string gender)
+    {
+        if (string.IsNullOrWhiteSpace(gender))
+            return string.Empty;
+
+        string value = gender.Trim();
+        string upperValue = value.ToUpperInvariant();
+        if (upperValue.StartsWith("–ú") || upperValue.StartsWith("M"))
+            return "M";
+        if (upperValue.StartsWith("–ñ") || upperValue.StartsWith("F") || upperValue.StartsWith("W"))
+            return "F";
+
+        if (value.Equals("M", StringComparison.OrdinalIgnoreCase) || value.Equals("Male", StringComparison.OrdinalIgnoreCase) || value.Equals("Man", StringComparison.OrdinalIgnoreCase) || value.Equals("–ú", StringComparison.OrdinalIgnoreCase) || value.Equals("–ú—É–∂—Å–∫–æ–π", StringComparison.OrdinalIgnoreCase))
+            return "M";
+        if (value.Equals("F", StringComparison.OrdinalIgnoreCase) || value.Equals("Female", StringComparison.OrdinalIgnoreCase) || value.Equals("Woman", StringComparison.OrdinalIgnoreCase) || value.Equals("–ñ", StringComparison.OrdinalIgnoreCase) || value.Equals("–ñ–µ–Ω—Å–∫–∏–π", StringComparison.OrdinalIgnoreCase))
+            return "F";
+
+        return string.Empty;
+    }
+
+    private bool IsAccreditedIssuer(string region, string issuingHospital)
+    {
+        if (string.IsNullOrWhiteSpace(region) || string.IsNullOrWhiteSpace(issuingHospital))
+            return false;
+
+        string normalizedRegion = NormalizeMedicalRecordText(region);
+        string normalizedIssuer = NormalizeMedicalRecordText(issuingHospital);
+
+        return AccreditedClinics.TryGetValue(normalizedRegion, out HashSet<string> clinics)
+            && clinics.Contains(normalizedIssuer);
+    }
+
+    private bool IsExpirationDateValid(string expirationDate)
+    {
+        if (!TryParseMedicalDate(expirationDate, out DateTime expiresOn))
+            return false;
+
+        if (!TryParseMedicalDate(currentCalendarDate, out DateTime currentDate))
+            currentDate = DateTime.Today;
+
+        return expiresOn.Date > currentDate.Date;
+    }
+
+    private bool TryParseMedicalDate(string value, out DateTime date)
+    {
+        string[] formats =
+        {
+            "dd.MM.yyyy",
+            "d.MM.yyyy",
+            "dd.M.yyyy",
+            "d.M.yyyy",
+            "yyyy-MM-dd",
+            "MM/dd/yyyy",
+            "M/d/yyyy"
+        };
+
+        return DateTime.TryParseExact(value, formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out date)
+            || DateTime.TryParse(value, CultureInfo.InvariantCulture, DateTimeStyles.None, out date);
+    }
+
+    private static string NormalizeMedicalRecordText(string value)
+    {
+        return value.Trim()
+            .Replace("‚Äú", "\"")
+            .Replace("‚Äù", "\"")
+            .Replace("¬´", "\"")
+            .Replace("¬ª", "\"")
+            .Replace("  ", " ")
+            .ToUpperInvariant();
+    }
+
+    private static readonly Dictionary<string, HashSet<string>> AccreditedClinics = new Dictionary<string, HashSet<string>>
+    {
+        { NormalizeMedicalRecordText("–°–µ–≤–µ—Ä–æ–¥–≤–∏–Ω—Å–∫–∏–π —Ä–µ–≥–∏–æ–Ω"), new HashSet<string> { NormalizeMedicalRecordText("–ú–°–ß \"–ü–æ–ª—è—Ä–Ω–∞—è\""), NormalizeMedicalRecordText("–ö–ë-41 \"–ú–æ—Ä–æ–∑\""), NormalizeMedicalRecordText("–ë–æ–ª—å–Ω–∏—Ü–∞ –∏–º–µ–Ω–∏ –•–æ–ª–æ–¥–∞") } },
+        { NormalizeMedicalRecordText("–ó–∞–ª–µ—Å—Å–∫–∏–π —Ä–µ–≥–∏–æ–Ω"), new HashSet<string> { NormalizeMedicalRecordText("–î—É–±—Ä–∞–≤–∞ –¶–†–ë"), NormalizeMedicalRecordText("–ü–æ–ª–∏–∫–ª–∏–Ω–∏–∫–∞ ‚Ññ 9"), NormalizeMedicalRecordText("–°–∞–Ω–∞—Ç–æ—Ä–∏–π \"–ò—Å—Ç–æ–∫\"") } },
+        { NormalizeMedicalRecordText("–ü—Ä–∏–≥–æ—Ä—Å–∫–∏–π –æ–∫—Ä—É–≥"), new HashSet<string> { NormalizeMedicalRecordText("–ú–µ–¥—Ü–µ–Ω—Ç—Ä \"–í—ã—Å–æ—Ç–∫–∞\""), NormalizeMedicalRecordText("–ö–ª–∏–Ω–∏–∫–∞ \"–•—Ä–µ–±–µ—Ç\""), NormalizeMedicalRecordText("–ú–°–ß \"–ì—Ä–∞–Ω–∏—Ç\"") } },
+        { NormalizeMedicalRecordText("–ú–µ–∂–¥—É—Ä–µ—á–µ–Ω—Å–∫–∏–π —É–∑–µ–ª"), new HashSet<string> { NormalizeMedicalRecordText("–ó–∞–≤–æ–¥—Å–∫–∞—è –±–æ–ª—å–Ω–∏—Ü–∞"), NormalizeMedicalRecordText("–ö–ë-12 \"–ü—Ä–∏—á–∞–ª\""), NormalizeMedicalRecordText("–ú–µ–¥—Ü–µ–Ω—Ç—Ä \"–†—É—Å–ª–æ\"") } },
+        { NormalizeMedicalRecordText("–°—Ç–µ–ø–Ω–æ–≤—Å–∫–∞—è –≥—É–±–µ—Ä–Ω–∏—è"), new HashSet<string> { NormalizeMedicalRecordText("–ö–æ–≤—ã–ª—å—Å–∫–∞—è –±–æ–ª—å–Ω–∏—Ü–∞"), NormalizeMedicalRecordText("–ö–ë-5 \"–ú–∞—Ä–µ–≤–æ\""), NormalizeMedicalRecordText("–ú–µ–¥—Å–∞–Ω—á–∞—Å—Ç—å \"–ó–∞–∫–∞—Ç\"") } },
+        { NormalizeMedicalRecordText("–û–∑–µ—Ä—Å–∫–∏–π –ø—Ä–æ—Ç–µ–∫—Ç–æ—Ä–∞—Ç"), new HashSet<string> { NormalizeMedicalRecordText("–ù–ò–ò \"–ì–ª—É–±–∏–Ω–∞\""), NormalizeMedicalRecordText("–ö–ª–∏–Ω–∏–∫–∞ \"–†—è–±—å\""), NormalizeMedicalRecordText("–ú–°–ß \"–ö–∞–º—ã—à\"") } },
+        { NormalizeMedicalRecordText("–û—Å—Ç—Ä–æ–∂—Å–∫–∏–π —Å–µ–∫—Ç–æ—Ä"), new HashSet<string> { NormalizeMedicalRecordText("–¢—é—Ä–µ–º–Ω–∞—è –ú–°–ß"), NormalizeMedicalRecordText("–ö–ë-88 \"–ó–∞—Å–ª–æ–Ω\""), NormalizeMedicalRecordText("–ë–æ–ª—å–Ω–∏—Ü–∞ \"–í–µ—á–µ\"") } }
+    };
 
     private void EndDayAndGoToSummary()
     {

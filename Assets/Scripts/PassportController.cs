@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class PassportController : MonoBehaviour
 {
-    [Header("UI ссылки")]
-    public GameObject blurPanel;          // BlurPanel (затемнение/блюр фона)
-    public GameObject modalPanel;         // сам ProtocolModalPanel
+    [Header("UI пїЅпїЅпїЅпїЅпїЅпїЅ")]
+    public GameObject blurPanel;          // BlurPanel (пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ/пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ)
+    public GameObject modalPanel;         // пїЅпїЅпїЅ ProtocolModalPanel
 
     public TMP_Text nameText;
     public TMP_Text sexText;
@@ -13,19 +13,39 @@ public class PassportController : MonoBehaviour
 
     void Awake()
     {
-        // на всякий случай скрываем при старте
+        // пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         if (modalPanel != null) modalPanel.SetActive(false);
         if (blurPanel != null) blurPanel.SetActive(false);
     }
 
-    public void Show(string name, string sex, string birth)
+public void Show(string name, string sex, string birth, MedicalRecordData medicalRecord = null)
     {
         if (blurPanel != null) blurPanel.SetActive(true);
         if (modalPanel != null) modalPanel.SetActive(true);
 
-        if (nameText != null) nameText.text = "Имя: " + name;
-        if (sexText != null) sexText.text = "Пол: " + sex.ToString();
-        if (birthText != null) birthText.text = "Дата рождения: " + birth;
+        if (nameText != null) nameText.text = "РРјСЏ: " + name;
+        if (sexText != null) sexText.text = "РџРѕР»: " + sex;
+
+        if (birthText != null)
+        {
+            string text = "Р”Р°С‚Р° СЂРѕР¶РґРµРЅРёСЏ: " + birth;
+            if (medicalRecord != null)
+            {
+                if (medicalRecord.hasCard)
+                {
+                    text += "\nРџРѕР» РІ РјРµРґРєР°СЂС‚Рµ: " + medicalRecord.gender;
+                    text += "\nР РµРіРёРѕРЅ: " + medicalRecord.region;
+                    text += "\nР’С‹РґР°РЅР°: " + medicalRecord.issuingHospital;
+                    text += "\nР“РѕРґРЅР° РґРѕ: " + medicalRecord.expirationDate;
+                }
+                else
+                {
+                    text += "\nРњРµРґРєР°СЂС‚Р°: РѕС‚СЃСѓС‚СЃС‚РІСѓРµС‚";
+                }
+            }
+
+            birthText.text = text;
+        }
     }
 
     public void Hide()

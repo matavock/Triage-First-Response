@@ -237,7 +237,8 @@ public class Day1Controller : MonoBehaviour
         Paper.SetPatientInfo(
             patientNames[currentIndex],
             patientAges[currentIndex],
-            patientComplaints[currentIndex]
+            patientComplaints[currentIndex],
+            correctAnswers[currentIndex]
         );
     }
 

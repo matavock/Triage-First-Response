@@ -271,7 +271,8 @@ public class Day3Controller : MonoBehaviour
         Paper.SetPatientInfo(
             patientNames[currentIndex],
             patientAges[currentIndex],
-            patientComplaints[currentIndex]
+            patientComplaints[currentIndex],
+            correctAnswers[currentIndex]
         );
 
         // ÎÁÍÎÂËßÅÌ ÏÀÑÏÎĞÒ

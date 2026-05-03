@@ -1,4 +1,4 @@
-п»їusing UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
@@ -23,7 +23,7 @@ public class Paper : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        // РІС‹РґРµР»РµРЅРёРµ РЅР°Р·Р°Рґ
+        // выделение назад
         if (paperImage != null)
         {
             var c = paperImage.color;
@@ -37,10 +37,19 @@ public class Paper : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
         modal.Show(patientName, patientAge, patientComplaints);
     }
 
-    public void SetPatientInfo(string name, int age, string complaints)
+    public void SetPatientInfo(string name, int age, string complaints, bool shouldAdmit)
     {
         patientName = name;
         patientAge = age;
-        patientComplaints = complaints;
+        patientComplaints = FormatComplaints(complaints, shouldAdmit);
+    }
+
+    private string FormatComplaints(string complaints, bool shouldAdmit)
+    {
+        if (PlayerPrefs.GetInt("InstantAnswerFeedback", 0) != 1)
+            return complaints;
+
+        string answer = shouldAdmit ? "принять" : "отказать";
+        return complaints + "\nВерный ответ: " + answer;
     }
 }
