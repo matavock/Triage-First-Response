@@ -10,7 +10,6 @@ public class Passport : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public string patientName;
     public string patientSex;
     public MedicalRecordData medicalRecord;
-    public EntryTicketData entryTicket;
     public string patientBirth;
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -35,15 +34,14 @@ public class Passport : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        modal.Show(patientName, patientSex, patientBirth, medicalRecord, entryTicket);
+        modal.Show(patientName, patientSex, patientBirth, medicalRecord);
     }
 
-    public void SetPatientInfo(string name, string sex, string birth, MedicalRecordData record = null, EntryTicketData ticket = null)
+    public void SetPatientInfo(string name, string sex, string birth, MedicalRecordData record = null)
     {
         patientName = name;
         patientSex = sex;
         patientBirth = birth;
         medicalRecord = record;
-        entryTicket = ticket;
     }
 }

@@ -17,7 +17,7 @@ public class PassportController : MonoBehaviour
         if (blurPanel != null) blurPanel.SetActive(false);
     }
 
-    public void Show(string name, string sex, string birth, MedicalRecordData medicalRecord = null, EntryTicketData entryTicket = null)
+    public void Show(string name, string sex, string birth, MedicalRecordData medicalRecord = null)
     {
         if (blurPanel != null) blurPanel.SetActive(true);
         if (modalPanel != null) modalPanel.SetActive(true);
@@ -48,24 +48,31 @@ public class PassportController : MonoBehaviour
                 }
             }
 
-            if (entryTicket != null)
-            {
-                if (entryTicket.hasTicket)
-                {
-                    text += "\n\nEntry Ticket";
-                    text += "\nИмя: " + entryTicket.fullName;
-                    text += "\nПол: " + entryTicket.gender;
-                    text += "\nСерийный номер карты: " + entryTicket.medicalCardSerial;
-                    text += "\nДата прибытия: " + entryTicket.arrivalDate;
-                }
-                else
-                {
-                    text += "\n\nEntry Ticket: отсутствует";
-                }
-            }
-
             birthText.text = text;
         }
+    }
+
+    public void ShowEntryTicket(EntryTicketData entryTicket)
+    {
+        if (blurPanel != null) blurPanel.SetActive(true);
+        if (modalPanel != null) modalPanel.SetActive(true);
+
+        if (nameText != null) nameText.text = "Въездной билет";
+        if (sexText != null) sexText.text = string.Empty;
+
+        if (birthText == null)
+            return;
+
+        if (entryTicket == null || !entryTicket.hasTicket)
+        {
+            birthText.text = "Entry Ticket: отсутствует";
+            return;
+        }
+
+        birthText.text = "Имя: " + entryTicket.fullName
+            + "\nПол: " + entryTicket.gender
+            + "\nСерийный номер карты: " + entryTicket.medicalCardSerial
+            + "\nДата прибытия: " + entryTicket.arrivalDate;
     }
 
     public void Hide()

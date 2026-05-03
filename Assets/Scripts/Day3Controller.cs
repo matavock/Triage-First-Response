@@ -77,6 +77,7 @@ public class Day3Controller : MonoBehaviour
 
     [Header("Entry Ticket")]
     public bool checkEntryTickets = true;
+    public string localRegion = "Северодвинский регион";
     public bool[] outOfTownPatients;
     public EntryTicketData[] entryTickets;
 
@@ -87,6 +88,10 @@ public class Day3Controller : MonoBehaviour
     public Passport Passport;
     public GameObject passportObject;
     private Coroutine passportCoroutine;
+
+    public EntryTicket EntryTicket;
+    public GameObject entryTicketObject;
+    private Coroutine entryTicketCoroutine;
 
     public GameObject extraButtonsPanel;
 
@@ -166,6 +171,9 @@ public class Day3Controller : MonoBehaviour
         if (passportObject != null)
             passportObject.SetActive(false);
 
+        if (entryTicketObject != null)
+            entryTicketObject.SetActive(false);
+
         if (extraButtonsPanel != null)
             extraButtonsPanel.SetActive(false);
 
@@ -201,6 +209,16 @@ public class Day3Controller : MonoBehaviour
         passportCoroutine = null;
     }
 
+    private IEnumerator ShowEntryTicketWithDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (entryTicketObject != null && patientImage.gameObject.activeSelf && IsOutOfTown(currentIndex))
+            entryTicketObject.SetActive(true);
+
+        entryTicketCoroutine = null;
+    }
+
     private void ShowNextPatient()
     {
         currentIndex++;
@@ -226,11 +244,20 @@ public class Day3Controller : MonoBehaviour
             passportCoroutine = null;
         }
 
+        if (entryTicketCoroutine != null)
+        {
+            StopCoroutine(entryTicketCoroutine);
+            entryTicketCoroutine = null;
+        }
+
         if (paperObject != null)
             paperObject.SetActive(false);
 
         if (passportObject != null)
             passportObject.SetActive(false);
+
+        if (entryTicketObject != null)
+            entryTicketObject.SetActive(false);
 
         patientImage.sprite = patientSprites[currentIndex];
         patientImage.color = new Color(1f, 1f, 1f, 1f);
@@ -244,6 +271,7 @@ public class Day3Controller : MonoBehaviour
 
         paperCoroutine = StartCoroutine(ShowPaperWithDelay(0.35f));
         passportCoroutine = StartCoroutine(ShowPassportWithDelay(0.70f));
+        entryTicketCoroutine = StartCoroutine(ShowEntryTicketWithDelay(1.05f));
 
         Paper.SetPatientInfo(
             patientNames[currentIndex],
@@ -256,9 +284,11 @@ public class Day3Controller : MonoBehaviour
             patientPassportNames[currentIndex],
             patientSex[currentIndex],
             patientBirth[currentIndex],
-            GetMedicalRecord(currentIndex),
-            GetEntryTicket(currentIndex)
+            GetMedicalRecord(currentIndex)
         );
+
+        if (EntryTicket != null)
+            EntryTicket.SetTicketInfo(GetEntryTicket(currentIndex));
     }
 
     private bool IsCurrentPatientAcceptable()
@@ -299,6 +329,10 @@ public class Day3Controller : MonoBehaviour
 
     private bool IsOutOfTown(int index)
     {
+        MedicalRecordData record = GetMedicalRecord(index);
+        if (record != null && !string.IsNullOrWhiteSpace(record.region) && !string.IsNullOrWhiteSpace(localRegion))
+            return NormalizeMedicalRecordText(record.region) != NormalizeMedicalRecordText(localRegion);
+
         return outOfTownPatients != null && index >= 0 && index < outOfTownPatients.Length && outOfTownPatients[index];
     }
 
@@ -455,6 +489,9 @@ public class Day3Controller : MonoBehaviour
 
         if (passportObject != null)
             passportObject.SetActive(false);
+
+        if (entryTicketObject != null)
+            entryTicketObject.SetActive(false);
 
         SceneManager.LoadScene(summarySceneName);
     }
