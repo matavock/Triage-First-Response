@@ -1,3 +1,4 @@
+﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -9,6 +10,7 @@ public class Passport : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public string patientName;
     public string patientSex;
     public MedicalRecordData medicalRecord;
+    public EntryTicketData entryTicket;
     public string patientBirth;
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -23,7 +25,6 @@ public class Passport : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        // ��������� �����
         if (licenseImage != null)
         {
             var c = licenseImage.color;
@@ -34,14 +35,15 @@ public class Passport : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        modal.Show(patientName, patientSex, patientBirth, medicalRecord);
+        modal.Show(patientName, patientSex, patientBirth, medicalRecord, entryTicket);
     }
 
-    public void SetPatientInfo(string name, string sex, string birth, MedicalRecordData record = null)
+    public void SetPatientInfo(string name, string sex, string birth, MedicalRecordData record = null, EntryTicketData ticket = null)
     {
         patientName = name;
         patientSex = sex;
         patientBirth = birth;
         medicalRecord = record;
+        entryTicket = ticket;
     }
 }

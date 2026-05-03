@@ -12,6 +12,8 @@ using Unity.VectorGraphics;
     [Serializable]
     public class MedicalRecordData
     {
+        public string fullName;
+        public string serialNumber;
         public bool hasCard = true;
         public string gender;
         public string region;

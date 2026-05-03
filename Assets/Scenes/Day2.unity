@@ -5680,18 +5680,32 @@ MonoBehaviour:
   - {fileID: -2174354462273393540, guid: 391123e63260dc448a1d5aa22147c6d5, type: 3}
   dialogueSprites: {fileID: -5661048161491472857, guid: e4a3e03ad6a8aaa4aab1d457af9d3f7d, type: 3}
   patientDialogues:
-  - "Работаю продавцом. Кашель уже не отпускает несколько дней."
-  - "Я водитель автобуса. Сухой кашель есть, но карточку давно не проверял."
-  - "Я учитель. Голова раскалывается, нос заложен, кашля нет."
-  - "Я бармен. Кашель сухой, но медкарту с собой не взял."
-  - "Я пенсионер. Кашель постоянный, сухой, сил почти нет."
-  - "Я фитнес-тренер. Сухой кашель мешает вести занятия."
+  - "\u0420\u0430\u0431\u043E\u0442\u0430\u044E \u043F\u0440\u043E\u0434\u0430\u0432\u0446\u043E\u043C.
+    \u041A\u0430\u0448\u0435\u043B\u044C \u0443\u0436\u0435 \u043D\u0435 \u043E\u0442\u043F\u0443\u0441\u043A\u0430\u0435\u0442
+    \u043D\u0435\u0441\u043A\u043E\u043B\u044C\u043A\u043E \u0434\u043D\u0435\u0439."
+  - "\u042F \u0432\u043E\u0434\u0438\u0442\u0435\u043B\u044C \u0430\u0432\u0442\u043E\u0431\u0443\u0441\u0430.
+    \u0421\u0443\u0445\u043E\u0439 \u043A\u0430\u0448\u0435\u043B\u044C \u0435\u0441\u0442\u044C,
+    \u043D\u043E \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0443 \u0434\u0430\u0432\u043D\u043E
+    \u043D\u0435 \u043F\u0440\u043E\u0432\u0435\u0440\u044F\u043B."
+  - "\u042F \u0443\u0447\u0438\u0442\u0435\u043B\u044C. \u0413\u043E\u043B\u043E\u0432\u0430
+    \u0440\u0430\u0441\u043A\u0430\u043B\u044B\u0432\u0430\u0435\u0442\u0441\u044F,
+    \u043D\u043E\u0441 \u0437\u0430\u043B\u043E\u0436\u0435\u043D, \u043A\u0430\u0448\u043B\u044F
+    \u043D\u0435\u0442."
+  - "\u042F \u0431\u0430\u0440\u043C\u0435\u043D. \u041A\u0430\u0448\u0435\u043B\u044C
+    \u0441\u0443\u0445\u043E\u0439, \u043D\u043E \u043C\u0435\u0434\u043A\u0430\u0440\u0442\u0443
+    \u0441 \u0441\u043E\u0431\u043E\u0439 \u043D\u0435 \u0432\u0437\u044F\u043B."
+  - "\u042F \u043F\u0435\u043D\u0441\u0438\u043E\u043D\u0435\u0440. \u041A\u0430\u0448\u0435\u043B\u044C
+    \u043F\u043E\u0441\u0442\u043E\u044F\u043D\u043D\u044B\u0439, \u0441\u0443\u0445\u043E\u0439,
+    \u0441\u0438\u043B \u043F\u043E\u0447\u0442\u0438 \u043D\u0435\u0442."
+  - "\u042F \u0444\u0438\u0442\u043D\u0435\u0441-\u0442\u0440\u0435\u043D\u0435\u0440.
+    \u0421\u0443\u0445\u043E\u0439 \u043A\u0430\u0448\u0435\u043B\u044C \u043C\u0435\u0448\u0430\u0435\u0442
+    \u0432\u0435\u0441\u0442\u0438 \u0437\u0430\u043D\u044F\u0442\u0438\u044F."
   dialogue: {fileID: 548303783}
-  correctAnswers: 010100010101
-  acceptDepressionValue: 0a00000005000000050000000a000000050000000a000000
-  rejectDepressionValue: f6fffffffbfffffffbfffffff6fffffffbfffffff6ffffff
-  acceptWealthValue: 05000000e2ffffff05000000e2ffffff05000000e2ffffff
-  rejectWealthValue: e2ffffff00000000e2ffffff00000000e2ffffff00000000
+  correctAnswers: 010000000101
+  acceptDepressionValue: 0a0000000500000005000000050000000a0000000a000000
+  rejectDepressionValue: f6fffffffbfffffffbfffffffbfffffff6fffffff6ffffff
+  acceptWealthValue: 05000000e2ffffffe2ffffffe2ffffff0500000005000000
+  rejectWealthValue: e2ffffff000000000000000000000000e2ffffffe2ffffff
   delayBetweenPatients: 1
   summarySceneName: Day2Summary
   paperAudioSource: {fileID: 1339804363}
@@ -5700,66 +5714,86 @@ MonoBehaviour:
   depressionSlider: {fileID: 1608041904}
   wealthSlider: {fileID: 866056174}
   patientNames:
-  - "Продавец"
-  - "Водитель автобуса"
-  - "Учитель"
-  - "Бармен"
-  - "Пенсионер"
-  - "Фитнес-тренер"
+  - "\u041C\u0430\u0440\u0438\u043D\u0430 \u0421\u043E\u043A\u043E\u043B\u043E\u0432\u0430"
+  - "\u0412\u0438\u043A\u0442\u043E\u0440 \u041B\u0430\u0440\u0438\u043E\u043D\u043E\u0432"
+  - "\u0415\u043B\u0435\u043D\u0430 \u041C\u043E\u0440\u043E\u0437\u043E\u0432\u0430"
+  - "\u0422\u0438\u043C\u0443\u0440 \u0410\u0441\u0430\u043D\u043E\u0432"
+  - "\u041D\u0438\u043A\u043E\u043B\u0430\u0439 \u0415\u0440\u0451\u043C\u0438\u043D"
+  - "\u0410\u043B\u0438\u043D\u0430 \u041A\u0440\u0430\u0432\u0446\u043E\u0432\u0430"
   patientPassportNames:
-  - "Продавец"
-  - "Водитель автобуса"
-  - "Учитель"
-  - "Бармен"
-  - "Пенсионер"
-  - "Фитнес-тренер"
+  - "\u041C\u0430\u0440\u0438\u043D\u0430 \u0421\u043E\u043A\u043E\u043B\u043E\u0432\u0430"
+  - "\u0412\u0438\u043A\u0442\u043E\u0440 \u041B\u0430\u0440\u0438\u043E\u043D\u043E\u0432"
+  - "\u0415\u043B\u0435\u043D\u0430 \u041C\u043E\u0440\u043E\u0437\u043E\u0432\u0430"
+  - "\u0422\u0438\u043C\u0443\u0440 \u0410\u0441\u0430\u043D\u043E\u0432"
+  - "\u041D\u0438\u043A\u043E\u043B\u0430\u0439 \u0415\u0440\u0451\u043C\u0438\u043D"
+  - "\u0410\u043B\u0438\u043D\u0430 \u041A\u0440\u0430\u0432\u0446\u043E\u0432\u0430"
   patientAges: 21000000310000002c0000001d000000480000001b000000
   patientComplaints:
-  - "Постоянный сухой кашель\nСлабость после смены"
-  - "Постоянный сухой кашель\nТемпература 37.6°C"
-  - "Головная боль\nНасморк"
-  - "Постоянный сухой кашель\nПершение в горле"
-  - "Постоянный сухой кашель\nОдышка при ходьбе"
-  - "Постоянный сухой кашель\nБоль в груди после тренировки"
+  - "\u0421\u0443\u0445\u043E\u0439 \u043A\u0430\u0448\u0435\u043B\u044C\n\u0421\u043B\u0430\u0431\u043E\u0441\u0442\u044C
+    \u043F\u043E\u0441\u043B\u0435 \u0441\u043C\u0435\u043D\u044B"
+  - "\u0421\u0443\u0445\u043E\u0439 \u043A\u0430\u0448\u0435\u043B\u044C\n\u0422\u0435\u043C\u043F\u0435\u0440\u0430\u0442\u0443\u0440\u0430
+    37.6\xB0C"
+  - "\u0413\u043E\u043B\u043E\u0432\u043D\u0430\u044F \u0431\u043E\u043B\u044C\n\u041D\u0430\u0441\u043C\u043E\u0440\u043A"
+  - "\u0421\u0443\u0445\u043E\u0439 \u043A\u0430\u0448\u0435\u043B\u044C\n\u041F\u0435\u0440\u0448\u0435\u043D\u0438\u0435
+    \u0432 \u0433\u043E\u0440\u043B\u0435"
+  - "\u0421\u0443\u0445\u043E\u0439 \u043A\u0430\u0448\u0435\u043B\u044C\n\u041E\u0434\u044B\u0448\u043A\u0430
+    \u043F\u0440\u0438 \u0445\u043E\u0434\u044C\u0431\u0435"
+  - "\u0421\u0443\u0445\u043E\u0439 \u043A\u0430\u0448\u0435\u043B\u044C\n\u0411\u043E\u043B\u044C
+    \u0432 \u0433\u0440\u0443\u0434\u0438 \u043F\u043E\u0441\u043B\u0435 \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0438"
   patientSex:
-  - "Женский"
-  - "Мужской"
-  - "Женский"
-  - "Мужской"
-  - "Мужской"
-  - "Женский"
+  - "\u0416\u0435\u043D\u0441\u043A\u0438\u0439"
+  - "\u041C\u0443\u0436\u0441\u043A\u043E\u0439"
+  - "\u0416\u0435\u043D\u0441\u043A\u0438\u0439"
+  - "\u041C\u0443\u0436\u0441\u043A\u043E\u0439"
+  - "\u041C\u0443\u0436\u0441\u043A\u043E\u0439"
+  - "\u0416\u0435\u043D\u0441\u043A\u0438\u0439"
   checkMedicalRecords: 1
   currentCalendarDate: 15.03.2026
   medicalRecords:
-  - hasCard: 1
-    gender: "Ж"
-    region: "Северодвинский регион"
-    issuingHospital: "МСЧ \"Полярная\""
+  - fullName: 
+    serialNumber: 
+    hasCard: 1
+    gender: "\u0416"
+    region: "\u0421\u0435\u0432\u0435\u0440\u043E\u0434\u0432\u0438\u043D\u0441\u043A\u0438\u0439
+      \u0440\u0435\u0433\u0438\u043E\u043D"
+    issuingHospital: "\u041C\u0421\u0427 \"\u041F\u043E\u043B\u044F\u0440\u043D\u0430\u044F\""
     expirationDate: 04.05.2026
-  - hasCard: 1
-    gender: "М"
-    region: "Залесский регион"
-    issuingHospital: "Дубрава ЦРБ"
+  - fullName: 
+    serialNumber: 
+    hasCard: 1
+    gender: "\u041C"
+    region: "\u0417\u0430\u043B\u0435\u0441\u0441\u043A\u0438\u0439 \u0440\u0435\u0433\u0438\u043E\u043D"
+    issuingHospital: "\u0414\u0443\u0431\u0440\u0430\u0432\u0430 \u0426\u0420\u0411"
     expirationDate: 01.03.2026
-  - hasCard: 1
-    gender: "Ж"
-    region: "Пригорский округ"
-    issuingHospital: "Клиника \"Хребет\""
+  - fullName: 
+    serialNumber: 
+    hasCard: 1
+    gender: "\u0416"
+    region: "\u041F\u0440\u0438\u0433\u043E\u0440\u0441\u043A\u0438\u0439 \u043E\u043A\u0440\u0443\u0433"
+    issuingHospital: "\u041A\u043B\u0438\u043D\u0438\u043A\u0430 \"\u0425\u0440\u0435\u0431\u0435\u0442\""
     expirationDate: 04.05.2026
-  - hasCard: 0
-    gender: "М"
-    region: "Междуреченский узел"
-    issuingHospital: "Медцентр \"Русло\""
+  - fullName: 
+    serialNumber: 
+    hasCard: 0
+    gender: "\u041C"
+    region: "\u041C\u0435\u0436\u0434\u0443\u0440\u0435\u0447\u0435\u043D\u0441\u043A\u0438\u0439
+      \u0443\u0437\u0435\u043B"
+    issuingHospital: "\u041C\u0435\u0434\u0446\u0435\u043D\u0442\u0440 \"\u0420\u0443\u0441\u043B\u043E\""
     expirationDate: 04.05.2026
-  - hasCard: 1
-    gender: "М"
-    region: "Степновская губерния"
-    issuingHospital: "Медсанчасть \"Закат\""
+  - fullName: 
+    serialNumber: 
+    hasCard: 1
+    gender: "\u041C"
+    region: "\u0421\u0442\u0435\u043F\u043D\u043E\u0432\u0441\u043A\u0430\u044F \u0433\u0443\u0431\u0435\u0440\u043D\u0438\u044F"
+    issuingHospital: "\u041C\u0435\u0434\u0441\u0430\u043D\u0447\u0430\u0441\u0442\u044C
+      \"\u0417\u0430\u043A\u0430\u0442\""
     expirationDate: 04.05.2026
-  - hasCard: 1
-    gender: "Ж"
-    region: "Озерский протекторат"
-    issuingHospital: "Клиника \"Рябь\""
+  - fullName: 
+    serialNumber: 
+    hasCard: 1
+    gender: "\u0416"
+    region: "\u041E\u0437\u0435\u0440\u0441\u043A\u0438\u0439 \u043F\u0440\u043E\u0442\u0435\u043A\u0442\u043E\u0440\u0430\u0442"
+    issuingHospital: "\u041A\u043B\u0438\u043D\u0438\u043A\u0430 \"\u0420\u044F\u0431\u044C\""
     expirationDate: 04.05.2026
   patientBirth:
   - 18.02.1993
@@ -6078,11 +6112,19 @@ MonoBehaviour:
   patientName: 
   patientSex: 
   medicalRecord:
+    fullName: 
+    serialNumber: 
     hasCard: 1
     gender: 
     region: 
     issuingHospital: 
     expirationDate: 
+  entryTicket:
+    hasTicket: 1
+    fullName: 
+    gender: 
+    medicalCardSerial: 
+    arrivalDate: 
   patientBirth: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

@@ -1,11 +1,11 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 public class PassportController : MonoBehaviour
 {
-    [Header("UI ������")]
-    public GameObject blurPanel;          // BlurPanel (����������/���� ����)
-    public GameObject modalPanel;         // ��� ProtocolModalPanel
+    [Header("UI")]
+    public GameObject blurPanel;
+    public GameObject modalPanel;
 
     public TMP_Text nameText;
     public TMP_Text sexText;
@@ -13,12 +13,11 @@ public class PassportController : MonoBehaviour
 
     void Awake()
     {
-        // �� ������ ������ �������� ��� ������
         if (modalPanel != null) modalPanel.SetActive(false);
         if (blurPanel != null) blurPanel.SetActive(false);
     }
 
-public void Show(string name, string sex, string birth, MedicalRecordData medicalRecord = null)
+    public void Show(string name, string sex, string birth, MedicalRecordData medicalRecord = null, EntryTicketData entryTicket = null)
     {
         if (blurPanel != null) blurPanel.SetActive(true);
         if (modalPanel != null) modalPanel.SetActive(true);
@@ -33,6 +32,11 @@ public void Show(string name, string sex, string birth, MedicalRecordData medica
             {
                 if (medicalRecord.hasCard)
                 {
+                    text += "\n\nMedical ID";
+                    if (!string.IsNullOrEmpty(medicalRecord.fullName))
+                        text += "\nИмя: " + medicalRecord.fullName;
+                    if (!string.IsNullOrEmpty(medicalRecord.serialNumber))
+                        text += "\nСерийный номер: " + medicalRecord.serialNumber;
                     text += "\nПол в медкарте: " + medicalRecord.gender;
                     text += "\nРегион: " + medicalRecord.region;
                     text += "\nВыдана: " + medicalRecord.issuingHospital;
@@ -40,7 +44,23 @@ public void Show(string name, string sex, string birth, MedicalRecordData medica
                 }
                 else
                 {
-                    text += "\nМедкарта: отсутствует";
+                    text += "\n\nMedical ID: отсутствует";
+                }
+            }
+
+            if (entryTicket != null)
+            {
+                if (entryTicket.hasTicket)
+                {
+                    text += "\n\nEntry Ticket";
+                    text += "\nИмя: " + entryTicket.fullName;
+                    text += "\nПол: " + entryTicket.gender;
+                    text += "\nСерийный номер карты: " + entryTicket.medicalCardSerial;
+                    text += "\nДата прибытия: " + entryTicket.arrivalDate;
+                }
+                else
+                {
+                    text += "\n\nEntry Ticket: отсутствует";
                 }
             }
 
