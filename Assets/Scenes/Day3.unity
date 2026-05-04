@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 0.10980392, g: 0.1254902, b: 0.20392157, a: 1}
@@ -299,7 +299,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -309,7 +309,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text:
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1dddc11a415bbde41b52057c23aabae8, type: 2}
   m_sharedMaterial: {fileID: 850849469055703587, guid: 1dddc11a415bbde41b52057c23aabae8, type: 2}
@@ -391,7 +391,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.7490196}
   m_EffectDistance: {x: 1, y: -1}
@@ -478,7 +478,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -498,6 +498,102 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &300000000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 300000004}
+  - component: {fileID: 300000002}
+  - component: {fileID: 300000001}
+  - component: {fileID: 300000003}
+  m_Layer: 5
+  m_Name: EntryTicket
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &300000001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300000000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 3764570644994266304, guid: 852601efc154fcc41a050f45e53ba4c4, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &300000002
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300000000}
+  m_CullTransparentMesh: 1
+--- !u!114 &300000003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300000000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f38cfaa61bd4c04a8e2520c6a0f135e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntryTicket
+  ticketImage: {fileID: 300000001}
+  modal: {fileID: 1710539021}
+  entryTicket:
+    hasTicket: 1
+    fullName: 
+    gender: 
+    medicalCardSerial: 
+    arrivalDate: 
+--- !u!224 &300000004
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300000000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1543210393}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 306.9, y: -216}
+  m_SizeDelta: {x: 180, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &348396782
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,14 +740,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db25269439fd3b84ea230d9a28122a80, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClipboardHover
   clipboardImage: {fileID: 348396786}
   rulesPanel: {fileID: 598405695}
   rulesText: {fileID: 382477338}
   rulesContent: "\u0414\u0435\u043D\u044C 3 \u2014 \u043F\u0440\u043E\u0442\u043E\u043A\u043E\u043B
-    \u041D\u0412-3:\n\n\u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 ID: \u0441\u0432\u0435\u0440\u044F\u0439\u0442\u0435
-    Medical ID \u043F\u043E \u0441\u0442\u0430\u0440\u044B\u043C \u043F\u0440\u0430\u0432\u0438\u043B\u0430\u043C:
+    \u041D\u0412-3 (\u0441\u0443\u0445\u043E\u0439 \u043A\u0430\u0448\u0435\u043B\u044C)
+    \u043D\u0430 16.03.26 \u0421\u0435\u0432\u0435\u0440\u043E\u0434\u0432\u0438\u043D\u0441\u043A\u043E\u0433\u043E
+    \u0440\u0435\u0433\u0438\u043E\u043D\u0430:\n\n\u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430
+    ID: \u0441\u0432\u0435\u0440\u044F\u0439\u0442\u0435 Medical ID \u043F\u043E
+    \u0441\u0442\u0430\u0440\u044B\u043C \u043F\u0440\u0430\u0432\u0438\u043B\u0430\u043C:
     \u0444\u043E\u0442\u043E, \u043F\u043E\u043B, \u0441\u0440\u043E\u043A \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044F
     \u0438 \u043A\u043B\u0438\u043D\u0438\u043A\u0430 \u0432\u044B\u0434\u0430\u0447\u0438.\n\nEntry
     Ticket: \u043A\u0430\u0436\u0434\u044B\u0439 \u0438\u043D\u043E\u0433\u043E\u0440\u043E\u0434\u043D\u0438\u0439
@@ -659,7 +758,10 @@ MonoBehaviour:
     \u043F\u0440\u0435\u0434\u044A\u044F\u0432\u0438\u0442\u044C \u0412\u044A\u0435\u0437\u0434\u043D\u043E\u0439
     \u0431\u0438\u043B\u0435\u0442 \u0432\u043C\u0435\u0441\u0442\u0435 \u0441 Medical
     ID.\n\n\u0414\u0430\u043D\u043D\u044B\u0435 Medical ID \u0438 Entry Ticket \u0434\u043E\u043B\u0436\u043D\u044B
-    \u043F\u043E\u043B\u043D\u043E\u0441\u0442\u044C\u044E \u0441\u043E\u0432\u043F\u0430\u0434\u0430\u0442\u044C."
+    \u043F\u043E\u043B\u043D\u043E\u0441\u0442\u044C\u044E \u0441\u043E\u0432\u043F\u0430\u0434\u0430\u0442\u044C.\n\n\u041F\u0440\u043E\u0432\u0435\u0440\u044C\u0442\u0435
+    \u0414\u0430\u0442\u0443 \u043F\u0440\u0438\u0431\u044B\u0442\u0438\u044F - \u043E\u043D\u0430
+    \u0434\u043E\u043B\u0436\u043D\u0430 \u0441\u043E\u0432\u043F\u0430\u0434\u0430\u0442\u044C
+    \u0441 \u0441\u0435\u0433\u043E\u0434\u043D\u044F\u0448\u043D\u0435\u0439 \u0434\u0430\u0442\u043E\u0439."
   audioSource: {fileID: 348396784}
   hoverSound: {fileID: 0}
   sfxMixerGroup: {fileID: 1308846463672463071, guid: 83b9f94bb8100984db9442e8641a5ab9, type: 2}
@@ -676,7 +778,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -751,7 +853,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -889,7 +991,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.7490196}
   m_EffectDistance: {x: 1, y: -1}
@@ -904,7 +1006,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -914,7 +1016,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text:
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1dddc11a415bbde41b52057c23aabae8, type: 2}
   m_sharedMaterial: {fileID: 850849469055703587, guid: 1dddc11a415bbde41b52057c23aabae8, type: 2}
@@ -1023,7 +1125,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1061,21 +1163,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea5c6a18b7be62e49bd48cb6943a68cf, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Passport
   licenseImage: {fileID: 470130767}
   modal: {fileID: 1710539021}
-  patientName:
-  patientSex:
+  patientName: 
+  patientSex: 
   medicalRecord:
-    fullName:
-    serialNumber:
+    fullName: 
+    serialNumber: 
     hasCard: 1
-    gender:
-    region:
-    issuingHospital:
-    expirationDate:
-  patientBirth:
+    gender: 
+    region: 
+    issuingHospital: 
+    expirationDate: 
+  patientBirth: 
 --- !u!224 &470130770
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1094,102 +1196,6 @@ RectTransform:
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 141, y: -234.13}
   m_SizeDelta: {x: 136.5134, y: 86.6747}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &300000000
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 300000004}
-  - component: {fileID: 300000002}
-  - component: {fileID: 300000001}
-  - component: {fileID: 300000003}
-  m_Layer: 5
-  m_Name: EntryTicket
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &300000001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 300000000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 2045492094208909694, guid: 4c9f4292bc0d771479ddd3e97f1af32e, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &300000002
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 300000000}
-  m_CullTransparentMesh: 1
---- !u!114 &300000003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 300000000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f38cfaa61bd4c04a8e2520c6a0f135e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier: Assembly-CSharp::EntryTicket
-  ticketImage: {fileID: 300000001}
-  modal: {fileID: 1710539021}
-  entryTicket:
-    hasTicket: 1
-    fullName:
-    gender:
-    medicalCardSerial:
-    arrivalDate:
---- !u!224 &300000004
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 300000000}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1543210393}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 342, y: -213}
-  m_SizeDelta: {x: 190, y: 104}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &487032851
 GameObject:
@@ -1240,7 +1246,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb874a701c21551458c9ca0cdfe9295e, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoctorHandbookHover
   handbookImage: {fileID: 487032855}
   rulesPanel: {fileID: 598405695}
@@ -1399,7 +1405,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1455,7 +1461,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
   m_Navigation:
     m_Mode: 3
@@ -1498,14 +1504,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEditor.MonoScript, UnityEditor.CoreModule
-        m_MethodName:
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName:
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument:
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!224 &517383190
@@ -1540,7 +1546,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b91aea4e8d28b684ab2f9f572ce52d0b, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DeprProgBar
   progressSlider: {fileID: 517383189}
 --- !u!1 &584718018
@@ -1593,7 +1599,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19260037627608d42be4d080cdeb2c23, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenHover
   penImage: {fileID: 584718023}
   hoverAlpha: 0.7
@@ -1607,7 +1613,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
   m_Navigation:
     m_Mode: 3
@@ -1650,7 +1656,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument:
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &584718022
@@ -1663,7 +1669,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 902f32150e0707943a1c9a8b4b584c73, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenController
   extraButtonsPanel: {fileID: 1130282689}
 --- !u!114 &584718023
@@ -1676,7 +1682,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1752,7 +1758,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
@@ -1827,7 +1833,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1897,7 +1903,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 319d058a1389d4e48a4cbb9aa24ee956, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Day3Controller
   patientImage: {fileID: 2117095771}
   dialogueImage: {fileID: 1658947112}
@@ -1939,8 +1945,8 @@ MonoBehaviour:
   correctAnswers: 010100000001
   acceptDepressionValue: 0a0000000a0000000500000005000000050000000a000000
   rejectDepressionValue: f6fffffff6fffffffbfffffffbfffffffbfffffff6ffffff
-  acceptWealthValue: 0500000005000000e2ffffffe2ffffffe2ffffff05000000
-  rejectWealthValue: e2ffffffe2ffffff000000000000000000000000e2ffffff
+  acceptWealthValue: 0500000005000000f6fffffff6fffffff6ffffff05000000
+  rejectWealthValue: f6fffffff6ffffff000000000000000000000000f6ffffff
   delayBetweenPatients: 1
   summarySceneName: Day3Summary
   paperAudioSource: {fileID: 2090799214}
@@ -1949,12 +1955,12 @@ MonoBehaviour:
   depressionSlider: {fileID: 517383189}
   wealthSlider: {fileID: 2136317049}
   patientNames:
-  - "\u041E\u0445\u0440\u0430\u043D\u043D\u0438\u043A - \u041F\u0430\u0432\u0435\u043B \u0413\u0440\u043E\u043C\u043E\u0432"
-  - "\u0414\u0438\u0437\u0430\u0439\u043D\u0435\u0440 - \u0412\u0430\u0440\u0432\u0430\u0440\u0430 \u041B\u0438\u0441\u0438\u043D\u0430"
-  - "\u0422\u0430\u043A\u0441\u0438\u0441\u0442 - \u0420\u0443\u0441\u043B\u0430\u043D \u041A\u0430\u0440\u0438\u043C\u043E\u0432"
-  - "\u0421\u0442\u0443\u0434\u0435\u043D\u0442\u043A\u0430 - \u0414\u0430\u0440\u044C\u044F \u0412\u043E\u0440\u043E\u043D\u0446\u043E\u0432\u0430"
-  - "\u041A\u0443\u0440\u044C\u0435\u0440 \u0435\u0434\u044B - \u0418\u043B\u044C\u044F \u041D\u0435\u0441\u0442\u0435\u0440\u043E\u0432"
-  - "\u0411\u0438\u0437\u043D\u0435\u0441\u043C\u0435\u043D - \u0410\u0440\u0442\u0451\u043C \u0412\u043E\u043B\u043A\u043E\u0432"
+  - "\u041F\u0430\u0432\u0435\u043B \u0413\u0440\u043E\u043C\u043E\u0432"
+  - "\u0412\u0430\u0440\u0432\u0430\u0440\u0430 \u041B\u0438\u0441\u0438\u043D\u0430"
+  - "\u0420\u0443\u0441\u043B\u0430\u043D \u041A\u0430\u0440\u0438\u043C\u043E\u0432"
+  - "\u0414\u0430\u0440\u044C\u044F \u0412\u043E\u0440\u043E\u043D\u0446\u043E\u0432\u0430"
+  - "\u0418\u043B\u044C\u044F \u041D\u0435\u0441\u0442\u0435\u0440\u043E\u0432"
+  - "\u0410\u0440\u0442\u0451\u043C \u0412\u043E\u043B\u043A\u043E\u0432"
   patientPassportNames:
   - "\u041F\u0430\u0432\u0435\u043B \u0413\u0440\u043E\u043C\u043E\u0432"
   - "\u0412\u0430\u0440\u0432\u0430\u0440\u0430 \u041B\u0438\u0441\u0438\u043D\u0430"
@@ -1964,12 +1970,15 @@ MonoBehaviour:
   - "\u0410\u0440\u0442\u0451\u043C \u0412\u043E\u043B\u043A\u043E\u0432"
   patientAges: 260000001a0000002400000014000000180000002d000000
   patientComplaints:
-  - "\u041F\u043E\u0441\u0442\u043E\u044F\u043D\u043D\u044B\u0439 \u0441\u0443\u0445\u043E\u0439 \u043A\u0430\u0448\u0435\u043B\u044C\n\u0421\u043B\u0435\u0434\u044B \u0443\u0448\u0438\u0431\u0430 \u043F\u043E\u0441\u043B\u0435 \u0441\u043C\u0435\u043D\u044B"
-  - "\u041F\u043E\u0441\u0442\u043E\u044F\u043D\u043D\u044B\u0439 \u0441\u0443\u0445\u043E\u0439 \u043A\u0430\u0448\u0435\u043B\u044C\n\u0423\u0441\u0442\u0430\u043B\u043E\u0441\u0442\u044C"
-  - "\u041F\u043E\u0441\u0442\u043E\u044F\u043D\u043D\u044B\u0439 \u0441\u0443\u0445\u043E\u0439 \u043A\u0430\u0448\u0435\u043B\u044C\n\u0422\u0435\u043C\u043F\u0435\u0440\u0430\u0442\u0443\u0440\u0430 37.7\u00B0C"
-  - "\u041F\u043E\u0441\u0442\u043E\u044F\u043D\u043D\u044B\u0439 \u0441\u0443\u0445\u043E\u0439 \u043A\u0430\u0448\u0435\u043B\u044C\n\u0421\u043B\u0430\u0431\u043E\u0441\u0442\u044C"
+  - "\u0421\u0443\u0445\u043E\u0439 \u043A\u0430\u0448\u0435\u043B\u044C\n\u0421\u043B\u0435\u0434\u044B
+    \u0443\u0448\u0438\u0431\u0430 \u043F\u043E\u0441\u043B\u0435 \u0441\u043C\u0435\u043D\u044B"
+  - "\u0421\u0443\u0445\u043E\u0439 \u043A\u0430\u0448\u0435\u043B\u044C\n\u0423\u0441\u0442\u0430\u043B\u043E\u0441\u0442\u044C"
+  - "\u0421\u0443\u0445\u043E\u0439 \u043A\u0430\u0448\u0435\u043B\u044C\n\u0422\u0435\u043C\u043F\u0435\u0440\u0430\u0442\u0443\u0440\u0430
+    37.7\xB0C"
+  - "\u0421\u0443\u0445\u043E\u0439 \u043A\u0430\u0448\u0435\u043B\u044C\n\u0421\u043B\u0430\u0431\u043E\u0441\u0442\u044C"
   - "\u0413\u043E\u043B\u043E\u0432\u043D\u0430\u044F \u0431\u043E\u043B\u044C\n\u041D\u0430\u0441\u043C\u043E\u0440\u043A"
-  - "\u041F\u043E\u0441\u0442\u043E\u044F\u043D\u043D\u044B\u0439 \u0441\u0443\u0445\u043E\u0439 \u043A\u0430\u0448\u0435\u043B\u044C\n\u0414\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u0432 \u0433\u0440\u0443\u0434\u0438"
+  - "\u0421\u0443\u0445\u043E\u0439 \u043A\u0430\u0448\u0435\u043B\u044C\n\u0414\u0430\u0432\u043B\u0435\u043D\u0438\u0435
+    \u0432 \u0433\u0440\u0443\u0434\u0438"
   patientSex:
   - "\u041C\u0443\u0436\u0441\u043A\u043E\u0439"
   - "\u0416\u0435\u043D\u0441\u043A\u0438\u0439"
@@ -1991,7 +2000,8 @@ MonoBehaviour:
     serialNumber: MI-3007
     hasCard: 1
     gender: "\u041C"
-    region: "\u0421\u0435\u0432\u0435\u0440\u043E\u0434\u0432\u0438\u043D\u0441\u043A\u0438\u0439 \u0440\u0435\u0433\u0438\u043E\u043D"
+    region: "\u0421\u0435\u0432\u0435\u0440\u043E\u0434\u0432\u0438\u043D\u0441\u043A\u0438\u0439
+      \u0440\u0435\u0433\u0438\u043E\u043D"
     issuingHospital: "\u041C\u0421\u0427 \"\u041F\u043E\u043B\u044F\u0440\u043D\u0430\u044F\""
     expirationDate: 20.04.2026
   - fullName: "\u0412\u0430\u0440\u0432\u0430\u0440\u0430 \u041B\u0438\u0441\u0438\u043D\u0430"
@@ -1999,7 +2009,8 @@ MonoBehaviour:
     hasCard: 1
     gender: "\u0416"
     region: "\u0417\u0430\u043B\u0435\u0441\u0441\u043A\u0438\u0439 \u0440\u0435\u0433\u0438\u043E\u043D"
-    issuingHospital: "\u041F\u043E\u043B\u0438\u043A\u043B\u0438\u043D\u0438\u043A\u0430 \u2116 9"
+    issuingHospital: "\u041F\u043E\u043B\u0438\u043A\u043B\u0438\u043D\u0438\u043A\u0430
+      \u2116 9"
     expirationDate: 20.04.2026
   - fullName: "\u0420\u0443\u0441\u043B\u0430\u043D \u041A\u0430\u0440\u0438\u043C\u043E\u0432"
     serialNumber: MI-3009
@@ -2012,14 +2023,16 @@ MonoBehaviour:
     serialNumber: MI-3010
     hasCard: 1
     gender: "\u0416"
-    region: "\u041C\u0435\u0436\u0434\u0443\u0440\u0435\u0447\u0435\u043D\u0441\u043A\u0438\u0439 \u0443\u0437\u0435\u043B"
+    region: "\u041C\u0435\u0436\u0434\u0443\u0440\u0435\u0447\u0435\u043D\u0441\u043A\u0438\u0439
+      \u0443\u0437\u0435\u043B"
     issuingHospital: "\u041A\u0411-12 \"\u041F\u0440\u0438\u0447\u0430\u043B\""
     expirationDate: 20.04.2026
   - fullName: "\u0418\u043B\u044C\u044F \u041D\u0435\u0441\u0442\u0435\u0440\u043E\u0432"
     serialNumber: MI-3011
     hasCard: 1
     gender: "\u041C"
-    region: "\u0421\u0435\u0432\u0435\u0440\u043E\u0434\u0432\u0438\u043D\u0441\u043A\u0438\u0439 \u0440\u0435\u0433\u0438\u043E\u043D"
+    region: "\u0421\u0435\u0432\u0435\u0440\u043E\u0434\u0432\u0438\u043D\u0441\u043A\u0438\u0439
+      \u0440\u0435\u0433\u0438\u043E\u043D"
     issuingHospital: "\u041A\u0411-41 \"\u041C\u043E\u0440\u043E\u0437\""
     expirationDate: 20.04.2026
   - fullName: "\u0410\u0440\u0442\u0451\u043C \u0412\u043E\u043B\u043A\u043E\u0432"
@@ -2030,13 +2043,15 @@ MonoBehaviour:
     issuingHospital: "\u041D\u0418\u0418 \"\u0413\u043B\u0443\u0431\u0438\u043D\u0430\""
     expirationDate: 20.04.2026
   checkEntryTickets: 1
-  localRegion: "\u0421\u0435\u0432\u0435\u0440\u043E\u0434\u0432\u0438\u043D\u0441\u043A\u0438\u0439 \u0440\u0435\u0433\u0438\u043E\u043D"
+  localRegion: "\u0421\u0435\u0432\u0435\u0440\u043E\u0434\u0432\u0438\u043D\u0441\u043A\u0438\u0439
+    \u0440\u0435\u0433\u0438\u043E\u043D"
+  outOfTownPatients: 
   entryTickets:
   - hasTicket: 0
-    fullName:
-    gender:
-    medicalCardSerial:
-    arrivalDate:
+    fullName: 
+    gender: 
+    medicalCardSerial: 
+    arrivalDate: 
   - hasTicket: 1
     fullName: "\u0412\u0430\u0440\u0432\u0430\u0440\u0430 \u041B\u0438\u0441\u0438\u043D\u0430"
     gender: "\u0416"
@@ -2053,10 +2068,10 @@ MonoBehaviour:
     medicalCardSerial: MI-3010
     arrivalDate: 15.03.2026
   - hasTicket: 0
-    fullName:
-    gender:
-    medicalCardSerial:
-    arrivalDate:
+    fullName: 
+    gender: 
+    medicalCardSerial: 
+    arrivalDate: 
   - hasTicket: 1
     fullName: "\u0410\u0440\u0442\u0451\u043C \u0412\u043E\u043B\u043A\u043E\u0432"
     gender: "\u041C"
@@ -2134,7 +2149,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2144,7 +2159,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text:
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1dddc11a415bbde41b52057c23aabae8, type: 2}
   m_sharedMaterial: {fileID: 850849469055703587, guid: 1dddc11a415bbde41b52057c23aabae8, type: 2}
@@ -2226,7 +2241,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.7490196}
   m_EffectDistance: {x: 1, y: -1}
@@ -2286,7 +2301,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.UI.InputSystemUIInputModule
   m_SendPointerHoverToParent: 1
   m_MoveRepeatDelay: 0.5
@@ -2317,7 +2332,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventSystem
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
@@ -2401,7 +2416,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2411,7 +2426,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text:
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1dddc11a415bbde41b52057c23aabae8, type: 2}
   m_sharedMaterial: {fileID: 850849469055703587, guid: 1dddc11a415bbde41b52057c23aabae8, type: 2}
@@ -2539,7 +2554,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9729488d59a984b4e832dd27fb89b58f, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProtocolModalController
   blurPanel: {fileID: 1494601119}
   modalPanel: {fileID: 1012756247}
@@ -2556,7 +2571,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.392}
@@ -2654,7 +2669,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2766,7 +2781,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
   m_Navigation:
     m_Mode: 3
@@ -2809,7 +2824,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument:
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1066962292
@@ -2822,7 +2837,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2899,7 +2914,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
@@ -2979,7 +2994,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
@@ -3054,7 +3069,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3191,7 +3206,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3400,7 +3415,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
@@ -3476,8 +3491,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_RenderShadows: 1
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
@@ -3613,7 +3628,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
   m_IgnoreReversedGraphics: 1
   m_BlockingObjects: 0
@@ -3630,7 +3645,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
@@ -3687,6 +3702,7 @@ RectTransform:
   - {fileID: 1875699715}
   - {fileID: 348396783}
   - {fileID: 487032852}
+  - {fileID: 300000004}
   - {fileID: 584718019}
   - {fileID: 2090799215}
   - {fileID: 470130770}
@@ -3730,7 +3746,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3825,7 +3841,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3944,7 +3960,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aefc1594d9fc1904cbca033b0c5673bd, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PassportController
   blurPanel: {fileID: 1494601119}
   modalPanel: {fileID: 1710539020}
@@ -3961,7 +3977,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
@@ -4041,7 +4057,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4051,7 +4067,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text:
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1dddc11a415bbde41b52057c23aabae8, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4133,7 +4149,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.7490196}
   m_EffectDistance: {x: 1, y: -1}
@@ -4194,7 +4210,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4204,7 +4220,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text:
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1dddc11a415bbde41b52057c23aabae8, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4286,7 +4302,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.7490196}
   m_EffectDistance: {x: 1, y: -1}
@@ -4365,7 +4381,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4442,7 +4458,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
   m_Navigation:
     m_Mode: 3
@@ -4485,7 +4501,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument:
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1797180841
@@ -4498,7 +4514,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 2100000, guid: d163c9648f9c16746a0ebe22719dc866, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4573,7 +4589,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4648,7 +4664,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4785,7 +4801,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4860,7 +4876,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 0.07058824, g: 0.08627451, b: 0.14117648, a: 1}
@@ -4915,8 +4931,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_ComponentVersion: 2
   m_LightType: 4
   m_BlendStyleIndex: 0
@@ -5001,7 +5017,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5093,7 +5109,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.7490196}
   m_EffectDistance: {x: 1, y: -1}
@@ -5174,7 +5190,7 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5250,7 +5266,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
   m_Navigation:
     m_Mode: 3
@@ -5293,7 +5309,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument:
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2043912672
@@ -5306,7 +5322,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5383,7 +5399,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
   m_Navigation:
     m_Mode: 3
@@ -5426,7 +5442,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument:
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2068054754
@@ -5439,7 +5455,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 2100000, guid: 9edb9e5297548704cbc4190258b989ef, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5496,7 +5512,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5588,7 +5604,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.7490196}
   m_EffectDistance: {x: 1, y: -1}
@@ -5650,7 +5666,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5688,13 +5704,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7157865c87862f4a8e563e071cfc361, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProtocolPaper
   paperImage: {fileID: 2090799211}
   modal: {fileID: 1012756248}
-  patientName:
+  patientName: 
   patientAge: 0
-  patientComplaints:
+  patientComplaints: 
 --- !u!82 &2090799214
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5839,7 +5855,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5914,7 +5930,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
   m_Navigation:
     m_Mode: 3
@@ -5987,7 +6003,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfe8378717b495d4da4e9d95472c87e2, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WealthProgBar
   progressSlider: {fileID: 2136317049}
 --- !u!1 &2141945460
@@ -6037,7 +6053,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
