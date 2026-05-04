@@ -75,6 +75,16 @@ public class PassportController : MonoBehaviour
             + "\nДата прибытия: " + entryTicket.arrivalDate;
     }
 
+    public void ShowTextDocument(string title, string body)
+    {
+        if (blurPanel != null) blurPanel.SetActive(true);
+        if (modalPanel != null) modalPanel.SetActive(true);
+
+        if (nameText != null) nameText.text = title;
+        if (sexText != null) sexText.text = string.Empty;
+        if (birthText != null) birthText.text = body;
+    }
+
     public void Hide()
     {
         if (blurPanel != null) blurPanel.SetActive(false);
