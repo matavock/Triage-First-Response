@@ -459,7 +459,6 @@ public class Day4Controller : MonoBehaviour
         SetActive(entryPermitObject, false);
         SetActive(idCardObject, false);
         SetActive(fingerprintObject, false);
-        SetActive(fingerprintButtonObject, false);
         SetActive(extraButtonsPanel, false);
     }
 
