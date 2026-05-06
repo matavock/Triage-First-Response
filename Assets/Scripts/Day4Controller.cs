@@ -27,7 +27,6 @@ public class PatientIdCardData
     public string fullName;
     public string gender;
     public string birthDate;
-    public bool photoMatches = true;
 }
 
 [Serializable]
@@ -238,26 +237,9 @@ public class Day4Controller : MonoBehaviour
 
     private bool IsCurrentPatientAcceptable()
     {
-        if (currentIndex < 0 || currentIndex >= correctAnswers.Length || !correctAnswers[currentIndex])
-            return false;
-
-        if (!IsMedicalRecordValid(currentIndex))
-            return false;
-
-        if (IsOutOfTown(currentIndex))
-        {
-            if (!IsEntryPermitValid(currentIndex))
-                return false;
-        }
-        else if (!IsIdCardValid(currentIndex))
-        {
-            return false;
-        }
-
-        if (FingerprintRequired(currentIndex) && !IsFingerprintValid(currentIndex))
-            return false;
-
-        return true;
+        return currentIndex >= 0
+            && currentIndex < correctAnswers.Length
+            && correctAnswers[currentIndex];
     }
 
     private bool IsMedicalRecordValid(int index)
@@ -265,7 +247,7 @@ public class Day4Controller : MonoBehaviour
         MedicalRecordData record = GetMedicalRecord(index);
         return record != null
             && record.hasCard
-            && GenderMatchesAppearance(index, record.gender)
+            && GenderMatchesPatientData(index, record.gender)
             && IsAccreditedIssuer(record.region, record.issuingHospital)
             && IsExpirationDateValid(record.expirationDate);
     }
@@ -290,7 +272,6 @@ public class Day4Controller : MonoBehaviour
         return record != null
             && idCard != null
             && idCard.hasCard
-            && idCard.photoMatches
             && NamesMatch(idCard.fullName, record.fullName)
             && NormalizeGender(idCard.gender) == NormalizeGender(record.gender)
             && DatesMatch(idCard.birthDate, patientBirth[index]);
@@ -381,11 +362,12 @@ public class Day4Controller : MonoBehaviour
             || DateTime.TryParse(value, CultureInfo.InvariantCulture, DateTimeStyles.None, out date);
     }
 
-    private bool GenderMatchesAppearance(int index, string gender)
+    private bool GenderMatchesPatientData(int index, string gender)
     {
-        string spriteName = patientSprites[index] != null ? patientSprites[index].name : string.Empty;
-        string expected = spriteName.IndexOf("Woman", StringComparison.OrdinalIgnoreCase) >= 0 ? "F" : "M";
-        return NormalizeGender(gender) == expected;
+        if (patientSex == null || index < 0 || index >= patientSex.Length)
+            return false;
+
+        return NormalizeGender(gender) == NormalizeGender(patientSex[index]);
     }
 
     private string NormalizeGender(string gender)
@@ -454,8 +436,7 @@ public class Day4Controller : MonoBehaviour
 
         return "ФИО: " + idCard.fullName
             + "\nПол: " + idCard.gender
-            + "\nДата рождения: " + idCard.birthDate
-            + "\nФото: " + (idCard.photoMatches ? "совпадает" : "не совпадает");
+            + "\nДата рождения: " + idCard.birthDate;
     }
 
     private string FormatFingerprint(FingerprintData fingerprint)
