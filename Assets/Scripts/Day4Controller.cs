@@ -158,7 +158,7 @@ public class Day4Controller : MonoBehaviour
 
     public void OnFingerprintButtonPressed()
     {
-        if (fingerprintObject != null && FingerprintRequired(currentIndex))
+        if (fingerprintObject != null)
             fingerprintObject.SetActive(true);
     }
 
@@ -207,7 +207,7 @@ public class Day4Controller : MonoBehaviour
         UpdateDay4Documents();
 
         if (fingerprintButtonObject != null)
-            fingerprintButtonObject.SetActive(FingerprintRequired(currentIndex));
+            fingerprintButtonObject.SetActive(true);
     }
 
     private IEnumerator ShowObjectWithDelay(GameObject target, float delay, bool playPaperSound)
