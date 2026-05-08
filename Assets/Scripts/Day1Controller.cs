@@ -101,22 +101,10 @@ public class Day1Controller : MonoBehaviour
     {
         if (isSwitching) return;
 
-        bool correct = correctAnswers[currentIndex] == true;
-        DayStats.depression += acceptDepressionValue[currentIndex];
-        DayStats.wealth += acceptWealthValue[currentIndex];
-
-        if (DayStats.depression <= 0)
-            DayStats.depression = 0;
-        if (DayStats.wealth <= 0)
-            DayStats.wealth = 0;
-
+        DayStats.RecordDecision(true, correctAnswers[currentIndex]);
         depressionSlider.value = DayStats.depression;
         wealthSlider.value = DayStats.wealth;
-        //DayStats.wealth += acceptWealthValue[currentIndex];
-        if (correct) DayStats.correct++;
-        else DayStats.incorrect++;
-
-        StartCoroutine(SwitchToNextPatient());
+StartCoroutine(SwitchToNextPatient());
     }
 
     // ----------------------------
@@ -126,21 +114,10 @@ public class Day1Controller : MonoBehaviour
     {
         if (isSwitching) return;
 
-        bool correct = correctAnswers[currentIndex] == false;
-        DayStats.depression += rejectDepressionValue[currentIndex];
-        DayStats.wealth += rejectWealthValue[currentIndex];
-
-        if (DayStats.depression <= 0)
-            DayStats.depression = 0;
-        if (DayStats.wealth <= 0)
-            DayStats.wealth = 0;
-
+        DayStats.RecordDecision(false, correctAnswers[currentIndex]);
         depressionSlider.value = DayStats.depression;
         wealthSlider.value = DayStats.wealth;
-        if (correct) DayStats.correct++;
-        else DayStats.incorrect++;
-
-        StartCoroutine(SwitchToNextPatient());
+StartCoroutine(SwitchToNextPatient());
     }
 
     // логика перехода к новому пациенту
@@ -250,6 +227,7 @@ public class Day1Controller : MonoBehaviour
         if (paperObject != null)
             paperObject.SetActive(false);
 
+        DayStats.ApplyEndOfDayWealth();
         SceneManager.LoadScene(summarySceneName);
     }
 }

@@ -123,13 +123,9 @@ public class Day3Controller : MonoBehaviour
     {
         if (isSwitching) return;
 
-        bool correct = IsCurrentPatientAcceptable();
-        DayStats.depression += acceptDepressionValue[currentIndex];
+        DayStats.RecordDecision(true, IsCurrentPatientAcceptable());
         depressionSlider.value = DayStats.depression;
-        DayStats.wealth += acceptWealthValue[currentIndex];
         wealthSlider.value = DayStats.wealth;
-        if (correct) DayStats.correct++;
-        else DayStats.incorrect++;
 
         StartCoroutine(SwitchToNextPatient());
     }
@@ -138,13 +134,9 @@ public class Day3Controller : MonoBehaviour
     {
         if (isSwitching) return;
 
-        bool correct = !IsCurrentPatientAcceptable();
-        DayStats.depression += rejectDepressionValue[currentIndex];
+        DayStats.RecordDecision(false, IsCurrentPatientAcceptable());
         depressionSlider.value = DayStats.depression;
-        DayStats.wealth += rejectWealthValue[currentIndex];
         wealthSlider.value = DayStats.wealth;
-        if (correct) DayStats.correct++;
-        else DayStats.incorrect++;
 
         StartCoroutine(SwitchToNextPatient());
     }
@@ -493,6 +485,7 @@ public class Day3Controller : MonoBehaviour
         if (entryTicketObject != null)
             entryTicketObject.SetActive(false);
 
+        DayStats.ApplyEndOfDayWealth();
         SceneManager.LoadScene(summarySceneName);
     }
 }

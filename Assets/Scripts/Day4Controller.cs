@@ -131,12 +131,8 @@ public class Day4Controller : MonoBehaviour
     {
         if (isSwitching) return;
 
-        bool correct = IsCurrentPatientAcceptable();
-        DayStats.depression += acceptDepressionValue[currentIndex];
-        DayStats.wealth += acceptWealthValue[currentIndex];
+        DayStats.RecordDecision(true, IsCurrentPatientAcceptable());
         UpdateSliders();
-        if (correct) DayStats.correct++;
-        else DayStats.incorrect++;
 
         StartCoroutine(SwitchToNextPatient());
     }
@@ -145,12 +141,8 @@ public class Day4Controller : MonoBehaviour
     {
         if (isSwitching) return;
 
-        bool correct = !IsCurrentPatientAcceptable();
-        DayStats.depression += rejectDepressionValue[currentIndex];
-        DayStats.wealth += rejectWealthValue[currentIndex];
+        DayStats.RecordDecision(false, IsCurrentPatientAcceptable());
         UpdateSliders();
-        if (correct) DayStats.correct++;
-        else DayStats.incorrect++;
 
         StartCoroutine(SwitchToNextPatient());
     }
@@ -496,6 +488,7 @@ public class Day4Controller : MonoBehaviour
     private void EndDayAndGoToSummary()
     {
         HidePatient();
+        DayStats.ApplyEndOfDayWealth();
         SceneManager.LoadScene(summarySceneName);
     }
 
