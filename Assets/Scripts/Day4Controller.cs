@@ -441,12 +441,12 @@ public class Day4Controller : MonoBehaviour
 
     private string FormatFingerprint(FingerprintData fingerprint)
     {
-        if (fingerprint == null || !fingerprint.required)
-            return "Биометрическая сверка не требуется";
+        if (fingerprint == null)
+            return "Fingerprint Archive: отсутствует";
 
         return "Отпечатки пациента: " + fingerprint.patientPrint
             + "\nАрхив Минздрава: " + fingerprint.archivePrint
-            + "\nAlias: " + fingerprint.alias;
+            + "\nAlias: " + (string.IsNullOrWhiteSpace(fingerprint.alias) ? "Нет" : fingerprint.alias);
     }
 
     private void HidePatient()

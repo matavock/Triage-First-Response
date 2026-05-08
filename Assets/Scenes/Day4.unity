@@ -2435,24 +2435,24 @@ MonoBehaviour:
     birthDate: 12.12.1958
   fingerprints:
   - required: 0
-    patientPrint: 
-    archivePrint: 
-    alias: 
+    patientPrint: FP-EM-41
+    archivePrint: FP-EM-41
+    alias: "\u041D\u0435\u0442"
     claimsNameChange: 0
   - required: 0
-    patientPrint: 
-    archivePrint: 
-    alias: 
+    patientPrint: FP-OS-28
+    archivePrint: FP-OS-28
+    alias: "\u041D\u0435\u0442"
     claimsNameChange: 0
   - required: 0
-    patientPrint: 
-    archivePrint: 
-    alias: 
+    patientPrint: FP-NK-63
+    archivePrint: FP-NK-63
+    alias: "\u041D\u0435\u0442"
     claimsNameChange: 0
   - required: 0
-    patientPrint: 
-    archivePrint: 
-    alias: 
+    patientPrint: FP-VB-52
+    archivePrint: FP-VB-52
+    alias: "\u041D\u0435\u0442"
     claimsNameChange: 0
   - required: 1
     patientPrint: FP-SO-77
@@ -2463,7 +2463,7 @@ MonoBehaviour:
   - required: 1
     patientPrint: FP-MA-11
     archivePrint: FP-MA-19
-    alias: 
+    alias: "\u041D\u0435\u0442"
     claimsNameChange: 0
   Paper: {fileID: 2090799213}
   paperObject: {fileID: 2090799210}
