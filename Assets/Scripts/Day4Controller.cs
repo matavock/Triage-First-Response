@@ -100,7 +100,9 @@ public class Day4Controller : MonoBehaviour
     [Header("Story Exception")]
     public int storyExceptionPatientIndex = 1;
     [TextArea(3, 6)]
-    public string storyExceptionDialogue = "Разрешения нет. Его оформляют три дня, а у меня нет трёх дней. В палате изоляции лежит диспетчер старой очистной станции. Только она помнит код аварийного сброса. Если я не попаду к ней сегодня, к вечеру район останется без чистой воды.";
+    public string storyExceptionDialogueFirst = "Разрешения нет. Его оформляют три дня, а у меня нет трёх дней. В палате изоляции лежит диспетчер старой очистной станции.";
+    [TextArea(3, 6)]
+    public string storyExceptionDialogueSecond = "Только она помнит код аварийного сброса. Если я не попаду к ней сегодня, к вечеру район останется без чистой воды.";
     public int storyExceptionAcceptDepression = 8;
     public int storyExceptionAcceptWealth = -5;
     public int storyExceptionRejectDepression = -4;
@@ -108,7 +110,7 @@ public class Day4Controller : MonoBehaviour
 
     private int currentIndex = -1;
     private bool isSwitching;
-    private bool storyExceptionRevealed;
+    private int storyExceptionDialogueStep;
     private Coroutine paperCoroutine;
     private Coroutine passportCoroutine;
     private Coroutine entryPermitCoroutine;
@@ -141,7 +143,7 @@ public class Day4Controller : MonoBehaviour
     {
         if (isSwitching) return;
 
-        if (IsStoryExceptionPatient() && storyExceptionRevealed)
+        if (IsStoryExceptionPatient() && storyExceptionDialogueStep > 0)
         {
             DayStats.RecordCustomDecision(true, false, storyExceptionAcceptDepression, storyExceptionAcceptWealth, false);
             UpdateSliders();
@@ -159,11 +161,13 @@ public class Day4Controller : MonoBehaviour
     {
         if (isSwitching) return;
 
-        if (IsStoryExceptionPatient() && !storyExceptionRevealed)
+        if (IsStoryExceptionPatient() && storyExceptionDialogueStep < 2)
         {
-            storyExceptionRevealed = true;
+            storyExceptionDialogueStep++;
             if (dialogue != null)
-                dialogue.text = storyExceptionDialogue;
+                dialogue.text = storyExceptionDialogueStep == 1
+                    ? storyExceptionDialogueFirst
+                    : storyExceptionDialogueSecond;
             return;
         }
 
@@ -207,7 +211,7 @@ public class Day4Controller : MonoBehaviour
 
         StopDocumentCoroutines();
         HidePatient();
-        storyExceptionRevealed = false;
+        storyExceptionDialogueStep = 0;
 
         patientImage.sprite = patientSprites[currentIndex];
         patientImage.color = Color.white;
