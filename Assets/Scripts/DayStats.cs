@@ -49,6 +49,23 @@ public static class DayStats
         return decisionCorrect;
     }
 
+    public static bool RecordCustomDecision(bool admitted, bool shouldAdmit, int depressionDelta, int wealthDelta, bool paysSalary)
+    {
+        bool decisionCorrect = admitted == shouldAdmit;
+
+        if (decisionCorrect)
+            correct++;
+        else
+            incorrect++;
+
+        if (decisionCorrect && admitted && paysSalary)
+            correctAdmitted++;
+
+        depression = Mathf.Clamp(depression + depressionDelta, 0, 100);
+        wealth = Mathf.Clamp(wealth + wealthDelta, 0, 100);
+        return decisionCorrect;
+    }
+
     public static void ApplyEndOfDayWealth()
     {
         if (wealthApplied)

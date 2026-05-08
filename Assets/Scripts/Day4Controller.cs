@@ -97,8 +97,18 @@ public class Day4Controller : MonoBehaviour
     public GameObject fingerprintButtonObject;
     public GameObject extraButtonsPanel;
 
+    [Header("Story Exception")]
+    public int storyExceptionPatientIndex = 1;
+    [TextArea(3, 6)]
+    public string storyExceptionDialogue = "Разрешения нет. Его оформляют три дня, а у меня нет трёх дней. В палате изоляции лежит диспетчер старой очистной станции. Только она помнит код аварийного сброса. Если я не попаду к ней сегодня, к вечеру район останется без чистой воды.";
+    public int storyExceptionAcceptDepression = 8;
+    public int storyExceptionAcceptWealth = -5;
+    public int storyExceptionRejectDepression = -4;
+    public int storyExceptionRejectWealth = 0;
+
     private int currentIndex = -1;
     private bool isSwitching;
+    private bool storyExceptionRevealed;
     private Coroutine paperCoroutine;
     private Coroutine passportCoroutine;
     private Coroutine entryPermitCoroutine;
@@ -131,6 +141,14 @@ public class Day4Controller : MonoBehaviour
     {
         if (isSwitching) return;
 
+        if (IsStoryExceptionPatient() && storyExceptionRevealed)
+        {
+            DayStats.RecordCustomDecision(true, false, storyExceptionAcceptDepression, storyExceptionAcceptWealth, false);
+            UpdateSliders();
+            StartCoroutine(SwitchToNextPatient());
+            return;
+        }
+
         DayStats.RecordDecision(true, IsCurrentPatientAcceptable());
         UpdateSliders();
 
@@ -140,6 +158,22 @@ public class Day4Controller : MonoBehaviour
     public void OnRejectButtonPressed()
     {
         if (isSwitching) return;
+
+        if (IsStoryExceptionPatient() && !storyExceptionRevealed)
+        {
+            storyExceptionRevealed = true;
+            if (dialogue != null)
+                dialogue.text = storyExceptionDialogue;
+            return;
+        }
+
+        if (IsStoryExceptionPatient())
+        {
+            DayStats.RecordCustomDecision(false, false, storyExceptionRejectDepression, storyExceptionRejectWealth, false);
+            UpdateSliders();
+            StartCoroutine(SwitchToNextPatient());
+            return;
+        }
 
         DayStats.RecordDecision(false, IsCurrentPatientAcceptable());
         UpdateSliders();
@@ -173,6 +207,7 @@ public class Day4Controller : MonoBehaviour
 
         StopDocumentCoroutines();
         HidePatient();
+        storyExceptionRevealed = false;
 
         patientImage.sprite = patientSprites[currentIndex];
         patientImage.color = Color.white;
@@ -232,6 +267,11 @@ public class Day4Controller : MonoBehaviour
         return currentIndex >= 0
             && currentIndex < correctAnswers.Length
             && correctAnswers[currentIndex];
+    }
+
+    private bool IsStoryExceptionPatient()
+    {
+        return currentIndex == storyExceptionPatientIndex;
     }
 
     private bool IsMedicalRecordValid(int index)
