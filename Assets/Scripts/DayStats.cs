@@ -11,6 +11,7 @@ public static class DayStats
     public static int daySalary;
 
     private static bool wealthApplied;
+    private static int pendingDayWealthDelta;
     private const int WealthPerCorrectAdmit = 5;
     private const int WealthPenaltyAfterFirstMistake = 5;
     private const int CorrectAdmitHappiness = 5;
@@ -25,6 +26,7 @@ public static class DayStats
         incorrect = 0;
         correctAdmitted = 0;
         daySalary = 0;
+        pendingDayWealthDelta = 0;
         wealthApplied = false;
     }
 
@@ -62,7 +64,7 @@ public static class DayStats
             correctAdmitted++;
 
         depression = Mathf.Clamp(depression + depressionDelta, 0, 100);
-        wealth = Mathf.Clamp(wealth + wealthDelta, 0, 100);
+        pendingDayWealthDelta += wealthDelta;
         return decisionCorrect;
     }
 
@@ -72,7 +74,8 @@ public static class DayStats
             return;
 
         daySalary = correctAdmitted * WealthPerCorrectAdmit
-            - Mathf.Max(0, incorrect - 1) * WealthPenaltyAfterFirstMistake;
+            - Mathf.Max(0, incorrect - 1) * WealthPenaltyAfterFirstMistake
+            + pendingDayWealthDelta;
         wealth = Mathf.Clamp(wealth + daySalary, 0, 100);
         wealthApplied = true;
     }
