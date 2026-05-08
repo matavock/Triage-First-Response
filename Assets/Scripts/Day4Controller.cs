@@ -424,9 +424,9 @@ public class Day4Controller : MonoBehaviour
 
         return "ФИО: " + permit.fullName
             + "\nНомер карты: " + permit.medicalCardSerial
-            + "\nPurpose: " + permit.purpose
-            + "\nDuration: " + permit.duration
-            + "\nEnter by: " + permit.enterBy;
+            + "\nЦель визита: " + permit.purpose
+            + "\nСрок: " + permit.duration
+            + "\nСрок действия: " + permit.enterBy;
     }
 
     private string FormatIdCard(PatientIdCardData idCard)
