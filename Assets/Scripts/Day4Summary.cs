@@ -1,4 +1,4 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,15 +15,16 @@ public class Day4SummaryUI : MonoBehaviour
     public TMP_Text mainMenuText;
 
     public bool winFlag = true;
-    public string nextSceneName = "Day5";
+    public string nextSceneName = "MainMenu";
 
     void Start()
     {
         winFlag = true;
+        HideMainMenuButton();
 
         if (titleText != null)
             titleText.text = DayStats.depression > 0 && DayStats.wealth > 0
-                ? "Поздравляем с завершением четвертого дня!"
+                ? "Спасибо за прохождение текущей версии!"
                 : "День завершен";
 
         if (totalText != null)
@@ -69,7 +70,6 @@ public class Day4SummaryUI : MonoBehaviour
 
             nextSceneName = "MainMenu";
             PlayerPrefs.SetInt("Day4", 0);
-            PlayerPrefs.SetInt("Day5", -1);
             PlayerPrefs.SetInt("Happiness", 50);
             PlayerPrefs.SetInt("Wealth", 50);
             PlayerPrefs.SetString("CurrentScene", "Day1");
@@ -77,16 +77,13 @@ public class Day4SummaryUI : MonoBehaviour
         else
         {
             if (nextScene != null)
-                nextScene.text = "ДЕНЬ 5";
-            if (mainMenuText != null)
-                mainMenuText.text = "В МЕНЮ";
+                nextScene.text = "В МЕНЮ";
 
-            nextSceneName = "Day5";
+            nextSceneName = "MainMenu";
             PlayerPrefs.SetInt("Day4", 1);
-            PlayerPrefs.SetInt("Day5", 0);
             PlayerPrefs.SetInt("Happiness", DayStats.depression);
             PlayerPrefs.SetInt("Wealth", DayStats.wealth);
-            PlayerPrefs.SetString("CurrentScene", "Day5");
+            PlayerPrefs.SetString("CurrentScene", "MainMenu");
         }
 
         PlayerPrefs.Save();
@@ -101,4 +98,17 @@ public class Day4SummaryUI : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+
+    private void HideMainMenuButton()
+    {
+        if (mainMenuText == null)
+            return;
+
+        Transform button = mainMenuText.transform.parent;
+        if (button != null)
+            button.gameObject.SetActive(false);
+        else
+            mainMenuText.gameObject.SetActive(false);
+    }
 }
+

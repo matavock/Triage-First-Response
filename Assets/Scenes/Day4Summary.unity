@@ -970,7 +970,7 @@ MonoBehaviour:
   nextScene: {fileID: 44032717}
   mainMenuText: {fileID: 734053092}
   winFlag: 1
-  nextSceneName: Day5
+  nextSceneName: MainMenu
 --- !u!1 &1145812276
 GameObject:
   m_ObjectHideFlags: 0
